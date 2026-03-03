@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crea i Relaxa - Tallers Creatius i Benestar</title>
+    <title>Crea i Relaxa - Pla d'Empresa Complet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -19,7 +19,6 @@
             background-color: #f9f9f9;
         }
 
-        /* Header y Navegacion - COLORES MINIMALISTAS */
         header {
             background: #ffffff;
             color: #2C3E50;
@@ -33,7 +32,7 @@
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -99,10 +98,9 @@
             transform: translateY(-1px);
         }
 
-        /* Secciones */
         section {
             padding: 5rem 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -110,7 +108,6 @@
             display: none;
         }
 
-        /* Hero Section - COLORES COHERENTES */
         .hero {
             background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.95)), 
                         url('https://images.pexels.com/photos/30489756/pexels-photo-30489756.jpeg');
@@ -176,7 +173,28 @@
             }
         }
 
-        /* Tallers Section - TARJETAS MINIMALISTAS */
+        h2 {
+            color: #2C3E50;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            color: #2C3E50;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        h4 {
+            color: #2C3E50;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        /* TALLERS SECTION */
         .tallers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -187,7 +205,7 @@
         .taller-card {
             background: white;
             border-radius: 8px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             transition: all 0.3s;
             border: 1px solid #F0F0F0;
@@ -208,251 +226,208 @@
             margin-bottom: 1.2rem;
         }
 
-        .taller-card h3 {
-            color: #2C3E50;
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .taller-card p {
-            color: #34495E;
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-
-        .taller-card p:last-of-type {
-            margin-top: 1rem;
-            color: #446C8A;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        /* Sobre Nosaltres - ESTILO LIMPIO */
-        .about-content {
+        /* NOSALTRES - EQUIP */
+        .equip-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
-        .about-image {
-            width: 100%;
-            height: 400px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .value-item {
+        .equip-card {
             background: white;
-            padding: 1.8rem 1.5rem;
             border-radius: 8px;
+            padding: 2rem 1.5rem;
             text-align: center;
             border: 1px solid #F0F0F0;
-            transition: all 0.3s;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .value-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-            border-color: #E0E0E0;
+        .equip-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.2rem;
+            border: 3px solid #446C8A;
         }
 
-        .value-icon {
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
-            color: #446C8A;
-        }
-
-        /* Contacte - FORMULARIO LIMPIO */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .contact-form {
+        /* TAULES */
+        .taula-container {
+            overflow-x: auto;
+            margin: 2rem 0;
             background: white;
-            padding: 2.5rem;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid #F0F0F0;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2C3E50;
-            font-weight: 500;
+        table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.95rem;
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.9rem;
-            border: 1px solid #E0E0E0;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: all 0.3s;
-            background: #fdfdfd;
-            color: #333;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #446C8A;
-            box-shadow: 0 0 0 3px rgba(68, 108, 138, 0.1);
-            background: white;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 130px;
-        }
-
-        .submit-btn {
+        th {
             background: #446C8A;
             color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
+            padding: 1rem;
             font-weight: 500;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s;
-            letter-spacing: 0.3px;
         }
 
-        .submit-btn:hover {
-            background: #3A5C75;
-            transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(68, 108, 138, 0.2);
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #F0F0F0;
+            vertical-align: top;
         }
 
-        .contact-info {
-            background: white;
-            color: #2C3E50;
-            padding: 2.5rem;
-            border-radius: 8px;
-            height: fit-content;
-            border: 1px solid #F0F0F0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        tr:last-child td {
+            border-bottom: none;
         }
 
-        .contact-info h3 {
-            margin-bottom: 1.8rem;
-            color: #2C3E50;
-            font-weight: 600;
+        tr:hover td {
+            background: #F9F9F9;
         }
 
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.2rem;
-            margin-bottom: 1.8rem;
-            font-size: 1.05rem;
+        .competencia-positiva {
+            color: #27AE60;
+            font-weight: 500;
         }
 
-        .info-icon {
-            font-size: 1.2rem;
-            margin-top: 0.2rem;
-            width: 24px;
-            text-align: center;
-            color: #446C8A;
+        .competencia-negativa {
+            color: #E74C3C;
+            font-weight: 500;
         }
 
-        /* Footer - COLORES COHERENTES */
-        footer {
-            background: #2C3E50;
-            color: #ECF0F1;
-            text-align: center;
-            padding: 3.5rem 2rem;
-            margin-top: 4rem;
-            border-top: 1px solid #34495E;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* DAFO */
+        .dafo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            text-align: left;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
-        .footer-logo {
-            height: 65px;
-            width: auto;
-            margin-bottom: 1.2rem;
-            opacity: 0.95;
+        .dafo-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1.8rem;
+            border: 1px solid #F0F0F0;
         }
 
-        .social-links {
+        .dafo-box h4 {
             display: flex;
-            gap: 1.2rem;
-            margin-top: 1.2rem;
-            font-size: 1.3rem;
-        }
-
-        .social-links a {
-            color: #ECF0F1;
-            transition: all 0.3s;
-            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            background: rgba(236, 240, 241, 0.1);
-            border-radius: 50%;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
         }
 
-        .social-links a:hover {
-            background: #446C8A;
-            transform: translateY(-2px);
-            color: white;
+        .dafo-box ul {
+            list-style: none;
         }
 
-        h2 {
-            color: #2C3E50;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+        .dafo-box li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .dafo-box li:before {
+            content: "•";
+            color: #446C8A;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .fortaleses { border-top: 4px solid #27AE60; }
+        .debilitats { border-top: 4px solid #E74C3C; }
+        .oportunitats { border-top: 4px solid #3498DB; }
+        .amenaces { border-top: 4px solid #F39C12; }
+
+        /* MAPA */
+        .mapa-localitzacio {
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .mapa-frame {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .detalls-local {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #F0F0F0;
+        }
+
+        .croquis-local {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            font-family: monospace;
+            line-height: 1.8;
+            border: 1px dashed #446C8A;
+        }
+
+        /* RSC */
+        .rsc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .rsc-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 8px;
+            border: 1px solid #F0F0F0;
             text-align: center;
-            font-weight: 600;
-            letter-spacing: -0.5px;
         }
 
-        h3 {
-            color: #2C3E50;
-            font-weight: 600;
+        .rsc-icon {
+            font-size: 2.5rem;
+            color: #446C8A;
+            margin-bottom: 1rem;
         }
 
-        /* QR Section - ESTILO MINIMALISTA */
+        /* INFO BOXES */
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #F0F0F0;
+            margin: 2rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #446C8A;
+            margin-bottom: 0.5rem;
+        }
+
+        /* QR Section */
         .qr-section {
             text-align: center;
             margin-top: 4rem;
@@ -496,23 +471,57 @@
             object-fit: contain;
         }
 
-        /* Mapa */
-        .map-container {
-            margin-top: 2rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            height: 400px;
-            border: 1px solid #F0F0F0;
+        /* FOOTER */
+        footer {
+            background: #2C3E50;
+            color: #ECF0F1;
+            text-align: center;
+            padding: 3.5rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #34495E;
         }
 
-        .map-frame {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            text-align: left;
         }
 
-        /* Responsive */
+        .footer-logo {
+            height: 65px;
+            width: auto;
+            margin-bottom: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+            font-size: 1.3rem;
+        }
+
+        .social-links a {
+            color: #ECF0F1;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(236, 240, 241, 0.1);
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            background: #446C8A;
+            transform: translateY(-2px);
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 gap: 1rem;
@@ -527,92 +536,14 @@
                 font-size: 1.1rem;
             }
 
-            .about-content,
-            .contact-container {
+            .dafo-grid,
+            .mapa-localitzacio {
                 grid-template-columns: 1fr;
             }
 
             section {
                 padding: 3.5rem 1.5rem;
             }
-
-            .logo-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-
-            .logo-img {
-                height: 55px;
-            }
-
-            .logo-text h1 {
-                font-size: 1.3rem;
-            }
-            
-            .footer-logo {
-                height: 55px;
-            }
-            
-            .contact-form,
-            .contact-info {
-                padding: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.9rem;
-            }
-        }
-
-        /* Iconos */
-        .icon-mission {
-            color: #446C8A;
-            font-size: 1.4rem;
-            margin-right: 0.5rem;
-        }
-        
-        .icon-vision {
-            color: #3498DB;
-            font-size: 1.4rem;
-            margin-right: 0.5rem;
-        }
-        
-        .icon-feature {
-            color: #2C3E50;
-            font-size: 1.8rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .icon-transport {
-            color: #446C8A;
-            font-size: 1.3rem;
-            margin-right: 0.5rem;
-        }
-        
-        /* Estilos para las secciones de valores y características */
-        .mission-vision-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .mission-box, .vision-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #F0F0F0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-        
-        .features-section {
-            margin-top: 4rem;
-            background: white;
-            padding: 3rem;
-            border-radius: 8px;
-            border: 1px solid #F0F0F0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            text-align: center;
         }
     </style>
 </head>
@@ -620,382 +551,416 @@
     <header>
         <nav>
             <div class="logo-container">
-                <!-- LOGO ACTUALIZADO -->
-                <img src="https://i.ibb.co/Y42PwSSd/logo-crea-i-relaxa.png" alt="Crea i Relaxa - Taller Creatiu" class="logo-img">
+                <img src="https://i.ibb.co/Y42PwSSd/logo-crea-i-relaxa.png" alt="Crea i Relaxa" class="logo-img">
                 <div class="logo-text">
                     <h1>Crea i Relaxa</h1>
-                    <p>Tallers Creatius i Benestar</p>
+                    <p>Pla d'Empresa - Curs 2025/2026</p>
                 </div>
             </div>
             <ul class="nav-links">
                 <li><a href="#" onclick="showSection('inici')" class="active">Inici</a></li>
+                <li><a href="#" onclick="showSection('macroentorn')">Macroentorn</a></li>
+                <li><a href="#" onclick="showSection('microentorn')">Microentorn</a></li>
+                <li><a href="#" onclick="showSection('rsc-dafo')">RSC i DAFO</a></li>
+                <li><a href="#" onclick="showSection('localitzacio')">Localització</a></li>
                 <li><a href="#" onclick="showSection('tallers')">Tallers</a></li>
-                <li><a href="#" onclick="showSection('nosaltres')">Nosaltres</a></li>
-                <li><a href="#" onclick="showSection('contacte')">Contacte</a></li>
+                <li><a href="#" onclick="showSection('nosaltres')">Equip</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- INICI -->
+    <!-- INICI / PORTADA -->
     <section id="inici" class="hero">
         <div class="hero-content">
             <h1>Crea i Relaxa</h1>
-            <p>Espais creatius per al teu benestar emocional. Combina l'art amb la relaxacio en un ambient tranquil i inspirador.</p>
-            <button class="cta-button" onclick="showSection('tallers')">Descobreix els nostres tallers</button>
+            <p>Pla d'Empresa · Grau Superior en Administració i Finances<br>Especialitat Gestió d'Assegurances</p>
+            <p style="font-size: 1.1rem;">Promotors: Ever Cárdenas · Sara Calvo · Jocelyne Rodríguez</p>
+            <button class="cta-button" onclick="showSection('macroentorn')">Explorar l'Estudi d'Entorn</button>
+        </div>
+    </section>
+
+    <!-- MACROENTORN (PESTEL) -->
+    <section id="macroentorn" class="section-hidden">
+        <h2>1.1 Estudi del Macroentorn (PESTEL)</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: #7F8C8D;">Anàlisi dels factors externs que afecten el projecte a Barcelona</p>
+
+        <div class="stats-grid" style="margin-bottom: 2rem;">
+            <div class="stat-item">
+                <div class="stat-number">2,5%</div>
+                <p>Creixement PIB Catalunya 2026</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8,2%</div>
+                <p>Atur a Barcelona (inferior mitjana)</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">387€</div>
+                <p>Despesa anual en oci/cultura</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,66M</div>
+                <p>Habitants Barcelona</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3><i class="fas fa-chart-line" style="color: #446C8A;"></i> Factors Econòmics</h3>
+            <p>Conjuntura favorable per a negocis de benestar: recuperació del poder adquisitiu, preu lloguer comercial assumible (15-25€/m²), inflació controlada (3,2%).</p>
+        </div>
+
+        <div class="info-box">
+            <h3><i class="fas fa-users" style="color: #446C8A;"></i> Factors Demogràfics</h3>
+            <p><strong>Públic objectiu:</strong> 420.000 persones (25-40 anys) + 380.000 persones (41-55 anys). Alta densitat poblacional (15.992 hab/km²) i 31% llars unipersonals.</p>
+        </div>
+
+        <div class="info-box">
+            <h3><i class="fas fa-heart" style="color: #446C8A;"></i> Factors Socioculturals</h3>
+            <p>Increment del 40% en cerca de mindfulness i art-teràpia (Google Trends). 65% dels barcelonins considera important el benestar emocional. Tendència "slow living".</p>
+        </div>
+
+        <div class="info-box">
+            <h3><i class="fas fa-gavel" style="color: #446C8A;"></i> Factors Polítics i Legals</h3>
+            <p>Ajuts disponibles: Barcelona Activa (fins 5.000€), Emprenem Jove, Kit Digital. Llicència d'activitat cultural (menys restrictiva).</p>
+        </div>
+
+        <div class="info-box">
+            <h3><i class="fas fa-microchip" style="color: #446C8A;"></i> Factors Tecnològics</h3>
+            <p>Cobertura 5G, fibra òptica, plataformes de reserva (Eventbrite), alta penetració d'Instagram (68%) i TikTok (45%).</p>
+        </div>
+
+        <div class="qr-section">
+            <h3>Validació de la Idea</h3>
+            <p><strong>Enquesta a 30 persones:</strong> 87% d'interès en assistir als tallers. Preu òptim: 20-22€ per sessió.</p>
+            <div class="qr-container">
+                <div class="qr-code">
+                    <img src="https://i.ibb.co/p6KQhShK/qr-crea-i-relaxa.png" alt="QR Validació">
+                </div>
+                <p>Resultats complets de l'enquesta</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MICROENTORN -->
+    <section id="microentorn" class="section-hidden">
+        <h2>1.2 Estudi del Microentorn</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Anàlisi de competència, proveïdors i clients a l'Eixample</p>
+
+        <h3>Competència Directa</h3>
+        <div class="taula-container">
+            <table>
+                <thead>
+                    <tr><th>Empresa</th><th>Adreça</th><th>Productes</th><th>Punts forts/Febles</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>La Mandràgora</td><td>C/ Consell de Cent, 325</td><td>Tallers ceràmica/pintura</td><td><span class="competencia-positiva">+ Qualitat</span> <span class="competencia-negativa">- Preu elevat</span></td></tr>
+                    <tr><td>Art & Chill</td><td>C/ Villarroel, 145</td><td>Pintura + vi</td><td><span class="competencia-positiva">+ Ambient social</span> <span class="competencia-negativa">- Massa festiu</span></td></tr>
+                    <tr><td>Taller Obert</td><td>C/ Londres, 78</td><td>Cursos trimestrals</td><td><span class="competencia-positiva">+ Comunitat</span> <span class="competencia-negativa">- Compromís alt</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Productes Substitutius</h3>
+        <div class="taula-container">
+            <table>
+                <thead><tr><th>Empresa</th><th>Servei</th><th>Amenaça</th></tr></thead>
+                <tbody>
+                    <tr><td>Yoga Dixit</td><td>Ioga i meditació</td><td>Moderada</td></tr>
+                    <tr><td>Mindfulness BCN</td><td>Programes estrès</td><td>Moderada</td></tr>
+                    <tr><td>Escape Room</td><td>Oci en grup</td><td>Baixa</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Proveïdors</h3>
+        <div class="taula-container">
+            <table>
+                <thead><tr><th>Proveïdor</th><th>Producte</th><th>Adreça</th></tr></thead>
+                <tbody>
+                    <tr><td>Bellas Artes Barcelona</td><td>Pintures, pinzells, ceràmica</td><td>C/ Tallers, 45</td></tr>
+                    <tr><td>Ikea</td><td>Mobiliari</td><td>Gran Via, 648</td></tr>
+                    <tr><td>Aromas Sense</td><td>Olis essencials, espelmes</td><td>C/ Diputació, 239</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="margin-top: 2rem;">Clients Potencials</h3>
+        <div class="equip-grid">
+            <div class="equip-card">
+                <i class="fas fa-briefcase" style="font-size: 3rem; color: #446C8A; margin-bottom: 1rem;"></i>
+                <h4>Professional estressat/da</h4>
+                <p>30-50 anys, treballadors oficina, necessitat de desconnectar</p>
+            </div>
+            <div class="equip-card">
+                <i class="fas fa-graduation-cap" style="font-size: 3rem; color: #446C8A; margin-bottom: 1rem;"></i>
+                <h4>Estudiant universitari</h4>
+                <p>18-25 anys, reduir ansietat acadèmica, socialitzar</p>
+            </div>
+            <div class="equip-card">
+                <i class="fas fa-paint-brush" style="font-size: 3rem; color: #446C8A; margin-bottom: 1rem;"></i>
+                <h4>Persona creativa emergent</h4>
+                <p>25-45 anys, explorar creativitat sense judicis</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSC I DAFO -->
+    <section id="rsc-dafo" class="section-hidden">
+        <h2>1.3 Responsabilitat Social Corporativa</h2>
+        
+        <div class="rsc-grid">
+            <div class="rsc-card">
+                <div class="rsc-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h4>Àmbit Social</h4>
+                <p>Tallers gratuïts mensuals per a col·lectius vulnerables<br>Conveni universitats (15€/sessió)<br>Col·laboració centres salut mental</p>
+            </div>
+            <div class="rsc-card">
+                <div class="rsc-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                <h4>Àmbit Econòmic</h4>
+                <p>Contractació local<br>Compra a proveïdors de proximitat<br>Preus assequibles (20-22€)</p>
+            </div>
+            <div class="rsc-card">
+                <div class="rsc-icon"><i class="fas fa-leaf"></i></div>
+                <h4>Àmbit Mediambiental</h4>
+                <p>Materials ecològics<br>Gestió de residus i reciclatge<br>Il·luminació LED<br>Acord amb Bicing</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 3rem;">1.4 Anàlisi DAFO</h2>
+        
+        <div class="dafo-grid">
+            <div class="dafo-box fortaleses">
+                <h4><i class="fas fa-plus-circle" style="color: #27AE60;"></i> Fortaleses</h4>
+                <ul>
+                    <li>Equip amb formació en administració i finances</li>
+                    <li>Proposta de valor diferenciada (art + benestar)</li>
+                    <li>Coneixement TIC i màrqueting digital</li>
+                    <li>Motivació i cohesió d'equip</li>
+                    <li>Flexibilitat i adaptabilitat</li>
+                </ul>
+            </div>
+            <div class="dafo-box debilitats">
+                <h4><i class="fas fa-minus-circle" style="color: #E74C3C;"></i> Debilitats</h4>
+                <ul>
+                    <li>Experiència empresarial pràctica limitada</li>
+                    <li>Recursos financers inicials reduïts</li>
+                    <li>Marca desconeguda</li>
+                    <li>Capacitat de negociació limitada</li>
+                    <li>Dependència inicial de monitors externs</li>
+                </ul>
+            </div>
+            <div class="dafo-box oportunitats">
+                <h4><i class="fas fa-sun" style="color: #3498DB;"></i> Oportunitats</h4>
+                <ul>
+                    <li>Creixement demanda benestar emocional</li>
+                    <li>Ajuts i subvencions per a joves emprenedors</li>
+                    <li>Nínxol "art+relaxació" no explotat</li>
+                    <li>Alta densitat població a l'Eixample</li>
+                    <li>Col·laboracions potencials</li>
+                </ul>
+            </div>
+            <div class="dafo-box amenaces">
+                <h4><i class="fas fa-cloud" style="color: #F39C12;"></i> Amenaces</h4>
+                <ul>
+                    <li>Competència directa creixent</li>
+                    <li>Inestabilitat econòmica (pujada lloguers)</li>
+                    <li>Productes substitutius (ioga, meditació)</li>
+                    <li>Barreres d'entrada baixes</li>
+                    <li>Estacionalitat</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALITZACIÓ -->
+    <section id="localitzacio" class="section-hidden">
+        <h2>1.5 Localització de l'Empresa</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Carrer del Consell de Cent, 345, baixos · 08009 Barcelona</p>
+
+        <div class="mapa-localitzacio">
+            <iframe class="mapa-frame" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.2098281800914!2d2.161301376033882!3d41.39238567129701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f5c90b40cb%3A0x7107c7b5c7c5c7c5!2sPasseig%20de%20Gr%C3%A0cia%2C%2085%2C%2008008%20Barcelona!5e0!3m2!1sca!2ses!4v1705704567890!5m2!1sca!2ses">
+            </iframe>
+            
+            <div class="detalls-local">
+                <h4>Justificació de la ubicació</h4>
+                <p><i class="fas fa-check-circle" style="color: #27AE60;"></i> Proximitat a clients: zona alta densitat professionals</p>
+                <p><i class="fas fa-check-circle" style="color: #27AE60;"></i> Accessibilitat: metro Passeig de Gràcia (5 min), bus, Bicing</p>
+                <p><i class="fas fa-check-circle" style="color: #27AE60;"></i> Visibilitat: carrer comercial amb aparador</p>
+                <p><i class="fas fa-exclamation-triangle" style="color: #F39C12;"></i> Inconvenient: aparcament difícil (foment transport públic)</p>
+                
+                <h4 style="margin-top: 1.5rem;">Característiques del local</h4>
+                <p><strong>Superfície:</strong> 75 m²</p>
+                <p><strong>Distribució:</strong> Sala tallers (50m²), magatzem (10m²), recepció (8m²), lavabo (4m²), office (3m²)</p>
+                <p><strong>Règim:</strong> Lloguer · 1.387,50€/mes (18,50€/m²)</p>
+                
+                <div class="croquis-local" style="margin-top: 1.5rem;">
+                    <pre>
+┌─────────────────────┐
+│      RECEPCIÓ       │
+├─────────────────────┤
+│                     │
+│  SALA TALLERS (50m²)│
+│                     │
+├─────────┬────┬──────┤
+│MAGATZEM │OFF.│ LAV. │
+│ (10m²)  │(3) │ (4)  │
+└─────────┴────┴──────┘
+                    </pre>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- TALLERS -->
     <section id="tallers" class="section-hidden">
         <h2>Els Nostres Tallers</h2>
-        <p style="text-align: center; font-size: 1.05rem; margin-bottom: 2rem; color: #7F8C8D; max-width: 800px; margin-left: auto; margin-right: auto;">
-            Oferim una varietat de tallers creatius dissenyats especificament per ajudar-te a relaxar-te, expressar la teva creativitat i millorar el teu benestar emocional. Tots els materials estan inclosos.
-        </p>
+        <p style="text-align: center; margin-bottom: 2rem;">Experiències creatives per al benestar emocional</p>
         
         <div class="tallers-grid">
-            <!-- PINTURA I AQUARELLA -->
             <div class="taller-card">
-                <img src="https://images.pexels.com/photos/7859176/pexels-photo-7859176.jpeg" alt="Persona pintando un cuadro con acuarelas o oleos" class="taller-img">
+                <img src="https://images.pexels.com/photos/7859176/pexels-photo-7859176.jpeg" alt="Pintura" class="taller-img">
                 <h3>Pintura i Aquarella</h3>
-                <p>Deixa fluir la teva creativitat amb pinzells i colors. Tecnicas adaptades a tots els nivells en un ambient relaxant amb musica suau.</p>
-                <p>Durada: 2 hores | Grups: 8-10 persones</p>
+                <p>Deixa fluir la creativitat en un ambient relaxant. Materials inclosos.</p>
+                <p>Durada: 2h | 20€</p>
             </div>
-
-            <!-- CERAMICA I MODELATGE -->
             <div class="taller-card">
-                <img src="https://images.pexels.com/photos/9736906/pexels-photo-9736906.jpeg" alt="Manos moldeando una pieza de ceramica o arcilla en un taller" class="taller-img">
-                <h3>Ceramica i Modelatge</h3>
-                <p>Treballa l'argila amb les teves mans i crea peces uniques. Activitat terapeutica que combina creativitat i relaxacio.</p>
-                <p>Durada: 2.5 hores | Grups: 6-8 persones</p>
+                <img src="https://images.pexels.com/photos/9736906/pexels-photo-9736906.jpeg" alt="Ceràmica" class="taller-img">
+                <h3>Ceràmica i Modelatge</h3>
+                <p>Treballa amb argila i crea peces úniques. Activitat terapèutica.</p>
+                <p>Durada: 2.5h | 25€</p>
             </div>
-
-            <!-- MANUALITATS I COLLAGE -->
             <div class="taller-card">
-                <img src="https://images.pexels.com/photos/7508794/pexels-photo-7508794.jpeg" alt="Materiales de manualidades como telas, hilos y tijeras" class="taller-img">
+                <img src="https://images.pexels.com/photos/7508794/pexels-photo-7508794.jpeg" alt="Manualitats" class="taller-img">
                 <h3>Manualitats i Collage</h3>
-                <p>Crea composicions artistiques utilitzant diferents materials. Perfecte per alliberar l'estres i despertar la imaginacio.</p>
-                <p>Durada: 1.5 hores | Grups: 10-12 persones</p>
+                <p>Allibera l'estrès creant composicions artístiques.</p>
+                <p>Durada: 1.5h | 18€</p>
             </div>
-
-            <!-- ART-TERAPIA -->
             <div class="taller-card">
-                <img src="https://images.pexels.com/photos/8378728/pexels-photo-8378728.jpeg" alt="Sesion de arte terapia o creacion artistica relajante" class="taller-img">
-                <h3>Art-terapia</h3>
-                <p>Combina l'expressio artistica amb tecniques de relaxacio i mindfulness. Espai segur per explorar emocions.</p>
-                <p>Durada: 2 hores | Grups: 6-8 persones</p>
-            </div>
-
-            <!-- TECNIQUES MIXTES -->
-            <div class="taller-card">
-                <img src="https://images.pexels.com/photos/6932231/pexels-photo-6932231.jpeg" alt="Otra vista de creacion artistica terapeutica" class="taller-img">
-                <h3>Tecniques Mixtes</h3>
-                <p>Experimenta amb diferents materials i tecniques artistiques. Cada sessio es una nova aventura creativa.</p>
-                <p>Durada: 2 hores | Grups: 8-10 persones</p>
-            </div>
-
-            <!-- TALLERS INFANTILS -->
-            <div class="taller-card">
-                <img src="https://images.pexels.com/photos/7869442/pexels-photo-7869442.jpeg" alt="Ninos y ninas disfrutando de un taller de arte infantil" class="taller-img">
-                <h3>Tallers Infantils</h3>
-                <p>Activitats creatives adaptades per als mes petits. Fomentem la imaginacio en un entorn divertit i educatiu.</p>
-                <p>Durada: 1.5 hores | Edats: 4-12 anys</p>
+                <img src="https://images.pexels.com/photos/8378728/pexels-photo-8378728.jpeg" alt="Art-teràpia" class="taller-img">
+                <h3>Art-teràpia</h3>
+                <p>Combinació d'expressió artística i tècniques de relaxació.</p>
+                <p>Durada: 2h | 22€</p>
             </div>
         </div>
 
-        <!-- SECCION QR - CON QR ACTUALIZADO -->
         <div class="qr-section">
-            <h3 style="color: #2C3E50;">Acces Rapid amb Codi QR</h3>
-            <p style="color: #7F8C8D;">Escanejar el codi QR per accedir al nostre logotip.</p>
-            
+            <h3>Identitat Digital i QR</h3>
+            <p>Doble estratègia de codis QR per a connectar espai físic i digital</p>
             <div class="qr-container">
                 <div class="qr-code">
-                    <!-- QR ACTUALIZADO -->
-                    <img src="https://i.ibb.co/p6KQhShK/qr-crea-i-relaxa.png" alt="QR Code Crea i Relaxa">
+                    <img src="https://i.ibb.co/p6KQhShK/qr-crea-i-relaxa.png" alt="QR Web">
                 </div>
-                <p style="margin-top: 1.2rem; font-size: 0.9rem; color: #7F8C8D;">
-                    <strong style="color: #2C3E50;">Smart City Integration:</strong> Connectem l'espai fisic amb el digital<br>
-                    Escaneja per: Informacio tallers • Inscripcions • Xarxes socials • Galeria
-                </p>
+                <p><strong>QR Principal:</strong> Accés a web, tallers, inscripcions</p>
+                <div class="qr-code" style="margin-top: 1rem;">
+                    <img src="https://i.ibb.co/p6KQhShK/qr-crea-i-relaxa.png" alt="QR Logotip">
+                </div>
+                <p><strong>QR Logotip:</strong> Descarrega la imatge corporativa</p>
             </div>
         </div>
     </section>
 
-    <!-- NOSALTRES -->
+    <!-- NOSALTRES / EQUIP -->
     <section id="nosaltres" class="section-hidden">
-        <h2>Sobre Nosaltres</h2>
-        
-        <div class="about-content">
-            <div>
-                <h3 style="color: #2C3E50; font-size: 1.7rem; margin-bottom: 1.2rem;">La nostra historia</h3>
-                <p style="margin-bottom: 1.2rem; line-height: 1.7; color: #34495E;">
-                    <strong style="color: #2C3E50;">Crea i Relaxa</strong> neix de la necessitat creixent de trobar espais de desconnexio de l'estres diari en un entorn segur, creatiu i no competitiu. Detectarem una oportunitat de negoci dins del sector del benestar emocional, que esta en creixement constant.
-                </p>
-                <p style="margin-bottom: 1.2rem; line-height: 1.7; color: #34495E;">
-                    Com a joves emprenedors amb formació en finances i gestió, combinem la nostra passió per crear estructures sòlides i projectes viables amb el desig d'autorealització professional i independència laboral.
-                </p>
-                <p style="line-height: 1.7; color: #34495E;">
-                    El nostre projecte combina tallers artistics amb un enfocament en la relaxacio i el creixement personal, creant experiencies uniques que van mes enlla de l'art tradicional.
-                </p>
+        <h2>L'Equip Promotor</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Estudiants de Grau Superior en Administració i Finances (Gestió d'Assegurances)</p>
+
+        <div class="equip-grid">
+            <div class="equip-card">
+                <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Ever Cárdenas" class="equip-img">
+                <h3>Ever Cárdenas</h3>
+                <p>Fundador</p>
+                <p style="font-size: 0.9rem; color: #7F8C8D;">Anàlisi financer, organització, resolució de problemes</p>
+                <p><i class="fas fa-phone"></i> 607 48 45 14</p>
             </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Estudi d'art Crea i Relaxa">
+            <div class="equip-card">
+                <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="Sara Calvo" class="equip-img">
+                <h3>Sara Calvo</h3>
+                <p>Fundadora</p>
+                <p style="font-size: 0.9rem; color: #7F8C8D;">Gestió administrativa, RRHH, sector assegurador</p>
+                <p><i class="fas fa-phone"></i> 618 326 032</p>
+            </div>
+            <div class="equip-card">
+                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Jocelyne Rodríguez" class="equip-img">
+                <h3>Jocelyne Rodríguez</h3>
+                <p>Fundadora</p>
+                <p style="font-size: 0.9rem; color: #7F8C8D;">Anàlisi econòmic, planificació, comunicació</p>
+                <p><i class="fas fa-phone"></i> 622 36 46 15</p>
             </div>
         </div>
 
-        <div style="margin-top: 4rem;">
-            <h3 style="color: #2C3E50; font-size: 1.7rem; margin-bottom: 1.5rem; text-align: center;">Missio i Visio</h3>
-            <div class="mission-vision-grid">
-                <div class="mission-box">
-                    <h4 style="color: #2C3E50; margin-bottom: 0.8rem; font-size: 1.25rem;">
-                        <i class="fas fa-bullseye icon-mission"></i> Missio
-                    </h4>
-                    <p style="line-height: 1.6; color: #34495E;">Oferir espais creatius que ajudin les persones a relaxar-se, expressar-se i millorar el seu benestar emocional a traves de l'art. Creem experiencies que combinin creativitat i relaxacio en un ambient acollidor.</p>
-                </div>
-                <div class="vision-box">
-                    <h4 style="color: #2C3E50; margin-bottom: 0.8rem; font-size: 1.25rem;">
-                        <i class="fas fa-rocket icon-vision"></i> Visio
-                    </h4>
-                    <p style="line-height: 1.6; color: #34495E;">Convertir "Crea i Relaxa" en un referent local en tallers creatius i de benestar, ampliant l'oferta d'activitats i arribant a diferents collectius. Aspirem a ser reconeguts per la nostra qualitat i impacte positiu.</p>
-                </div>
+        <div class="info-box">
+            <h4>Motivacions emprenedores</h4>
+            <p>Oportunitat de negoci en benestar emocional · Passió per l'art · Autorealització i independència</p>
+            <h4 style="margin-top: 1rem;">Barreres</h4>
+            <p>Experiència limitada en gestió pràctica · Recursos econòmics inicials reduïts</p>
+            <p><strong>Solucions:</strong> Assessorament gratuït, subvencions joves emprenedors, creixement gradual</p>
+        </div>
+
+        <div class="mission-vision-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+            <div class="mission-box" style="background: white; padding: 2rem; border-radius: 8px;">
+                <h4><i class="fas fa-bullseye" style="color: #446C8A;"></i> Missió</h4>
+                <p>Oferir espais creatius accessibles que, a través de l'art, ajudin les persones a relaxar-se, expressar-se i millorar el seu benestar emocional.</p>
+            </div>
+            <div class="vision-box" style="background: white; padding: 2rem; border-radius: 8px;">
+                <h4><i class="fas fa-rocket" style="color: #446C8A;"></i> Visió</h4>
+                <p>Convertir-nos en referent local de Barcelona en experiències de lleure enriquidores i expandir-nos de manera sostenible.</p>
             </div>
         </div>
 
-        <div style="margin-top: 4rem;">
-            <h3 style="color: #2C3E50; font-size: 1.7rem; margin-bottom: 2rem; text-align: center;">Els nostres valors</h3>
-            <div class="values-grid">
-                <div class="value-item">
-                    <div class="value-icon"><i class="fas fa-palette"></i></div>
-                    <h4 style="color: #2C3E50;">Creativitat</h4>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Fomentem l'expressio artistica lliure i sense limits</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon"><i class="fas fa-brain"></i></div>
-                    <h4 style="color: #2C3E50;">Benestar emocional</h4>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Posem el focus en la salut mental i l'equilibri personal</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon"><i class="fas fa-hands-helping"></i></div>
-                    <h4 style="color: #2C3E50;">Respecte i inclusio</h4>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Creem un espai acollidor per a tothom</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon"><i class="fas fa-star"></i></div>
-                    <h4 style="color: #2C3E50;">Qualitat</h4>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Ofereim el millor servei i materials</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon"><i class="fas fa-heart"></i></div>
-                    <h4 style="color: #2C3E50;">Proximitat</h4>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Establim una connexio genuina amb cada client</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="features-section">
-            <h3 style="color: #2C3E50; margin-bottom: 1.5rem;">El que ens fa diferents</h3>
-            <p style="font-size: 1.05rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #34495E; line-height: 1.7;">
-                No som nomes un taller artistic tradicional. Som una experiencia emocional completa que combina creativitat, relaxacio i creixement personal en un ambient dissenyat especificament per al benestar.
-            </p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2.5rem;">
-                <div>
-                    <div class="icon-feature"><i class="fas fa-paint-brush"></i></div>
-                    <strong style="color: #2C3E50;">Ambient unic</strong>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #7F8C8D;">Espais dissenyats per a la calma i la inspiracio</p>
-                </div>
-                <div>
-                    <div class="icon-feature"><i class="fas fa-users"></i></div>
-                    <strong style="color: #2C3E50;">Grups reduits</strong>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #7F8C8D;">Atencio personalitzada i propera (max. 12 persones)</p>
-                </div>
-                <div>
-                    <div class="icon-feature"><i class="fas fa-music"></i></div>
-                    <strong style="color: #2C3E50;">Experiencia sensorial</strong>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #7F8C8D;">Musica suau, aromes i atmosfera relaxant</p>
-                </div>
-                <div>
-                    <div class="icon-feature"><i class="fas fa-box-open"></i></div>
-                    <strong style="color: #2C3E50;">Tot inclos</strong>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #7F8C8D;">Materials i eines professionals inclosos</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTE -->
-    <section id="contacte" class="section-hidden">
-        <h2>Contacta amb Nosaltres</h2>
-        <p style="text-align: center; font-size: 1.05rem; margin-bottom: 2rem; color: #7F8C8D; max-width: 800px; margin-left: auto; margin-right: auto;">
-            Tens dubtes o vols mes informacio sobre els nostres tallers? Estem aqui per ajudar-te i respondre totes les teves preguntes.
-        </p>
-
-        <div class="contact-container">
-            <div class="contact-form">
-                <h3 style="color: #2C3E50; margin-bottom: 1.5rem;">Envia'ns un missatge</h3>
-                <form onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="nom">Nom complet *</label>
-                        <input type="text" id="nom" name="nom" required placeholder="El teu nom">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correu electronic *</label>
-                        <input type="email" id="email" name="email" required placeholder="email@exemple.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefon">Telefon</label>
-                        <input type="tel" id="telefon" name="telefon" placeholder="123 456 789">
-                    </div>
-                    <div class="form-group">
-                        <label for="taller">Taller d'interes</label>
-                        <select id="taller" name="taller">
-                            <option value="">Selecciona un taller</option>
-                            <option value="pintura">Pintura i Aquarella</option>
-                            <option value="ceramica">Ceramica i Modelatge</option>
-                            <option value="manualitats">Manualitats i Collage</option>
-                            <option value="artterapia">Art-terapia</option>
-                            <option value="mixtes">Tecniques Mixtes</option>
-                            <option value="infantils">Tallers Infantils</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="missatge">Missatge *</label>
-                        <textarea id="missatge" name="missatge" required placeholder="Escriu el teu missatge aqui..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Enviar missatge</button>
-                </form>
-            </div>
-
-            <div class="contact-info">
-                <h3>Informacio de contacte</h3>
-                <div class="info-item">
-                    <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
-                    <div>
-                        <strong>Adreca</strong><br>
-                        Passeig de Gracia, 85<br>
-                        08008 Barcelona
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon"><i class="fas fa-phone"></i></span>
-                    <div>
-                        <strong>Telefon</strong><br>
-                        +34 93 123 45 67
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon"><i class="fas fa-envelope"></i></span>
-                    <div>
-                        <strong>Email</strong><br>
-                        info@creairelaxa.cat
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span class="info-icon"><i class="fas fa-clock"></i></span>
-                    <div>
-                        <strong>Horari d'atencio</strong><br>
-                        Dilluns a Divendres: 10:00 - 14:00 i 16:00 - 20:00<br>
-                        Dissabtes: 10:00 - 14:00<br>
-                        Diumenges: Tancat
-                    </div>
-                </div>
-
-                <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #F0F0F0;">
-                    <h4 style="margin-bottom: 1.2rem; color: #2C3E50;">Segueix-nos a les xarxes</h4>
-                    <div class="social-links">
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-top: 3rem; background: white; padding: 2.5rem; border-radius: 8px; border: 1px solid #F0F0F0; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
-            <h3 style="color: #2C3E50; margin-bottom: 1.2rem; text-align: center;">Vine a coneixer-nos</h3>
-            <p style="text-align: center; margin-bottom: 2rem; color: #7F8C8D;">Estem ubicats al prestigios Passeig de Gracia, a Barcelona. T'esperem amb els braços oberts!</p>
-            
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.2098281800914!2d2.161301376033882!3d41.39238567129701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f5c90b40cb%3A0x7107c7b5c7c5c7c5!2sPasseig%20de%20Gr%C3%A0cia%2C%2085%2C%2008008%20Barcelona!5e0!3m2!1sca!2ses!4v1705704567890!5m2!1sca!2ses" 
-                    class="map-frame"
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; text-align: center;">
-                <div>
-                    <strong><i class="fas fa-subway icon-transport"></i> Metro</strong>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Passeig de Gracia (L2, L3, L4)<br>2 minuts a peu</p>
-                </div>
-                <div>
-                    <strong><i class="fas fa-bus icon-transport"></i> Bus</strong>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Linies 7, 22, 24<br>Parada Passeig de Gracia</p>
-                </div>
-                <div>
-                    <strong><i class="fas fa-parking icon-transport"></i> Aparcament</strong>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Parking SABA<br>Passeig de Gracia, 62</p>
-                </div>
-                <div>
-                    <strong><i class="fas fa-wheelchair icon-transport"></i> Accessibilitat</strong>
-                    <p style="font-size: 0.9rem; color: #7F8C8D;">Access adaptat complet<br>per a cadires de rodes</p>
-                </div>
-            </div>
+        <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+            <div class="value-item"><i class="fas fa-palette"></i> Creativitat lliure</div>
+            <div class="value-item"><i class="fas fa-brain"></i> Benestar emocional</div>
+            <div class="value-item"><i class="fas fa-equals"></i> Inclusió</div>
+            <div class="value-item"><i class="fas fa-chart-line"></i> Professionalitat</div>
+            <div class="value-item"><i class="fas fa-heart"></i> Proximitat</div>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
             <div>
-                <!-- LOGO ACTUALIZADO EN EL FOOTER -->
-                <img src="https://i.ibb.co/Y42PwSSd/logo-crea-i-relaxa.png" alt="Crea i Relaxa - Taller Creatiu" class="footer-logo">
-                <p><strong style="color: #ECF0F1;">Crea i Relaxa</strong><br>Tallers Creatius i Benestar</p>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #BDC3C7;">Passeig de Gracia, 85<br>08008 Barcelona</p>
+                <img src="https://i.ibb.co/Y42PwSSd/logo-crea-i-relaxa.png" alt="Crea i Relaxa" class="footer-logo">
+                <p>Pla d'Empresa · Curs 2025/2026</p>
+                <p>Promotors: Ever Cárdenas · Sara Calvo · Jocelyne Rodríguez</p>
             </div>
-            
             <div>
-                <h4 style="color: #BDC3C7; margin-bottom: 1.2rem; font-weight: 500;">Enllaços rapids</h4>
-                <ul style="list-style: none; line-height: 2.2;">
-                    <li><a href="#" onclick="showSection('inici')" style="color: #ECF0F1; text-decoration: none; font-size: 0.95rem;">Inici</a></li>
-                    <li><a href="#" onclick="showSection('tallers')" style="color: #ECF0F1; text-decoration: none; font-size: 0.95rem;">Tallers</a></li>
-                    <li><a href="#" onclick="showSection('nosaltres')" style="color: #ECF0F1; text-decoration: none; font-size: 0.95rem;">Sobre Nosaltres</a></li>
-                    <li><a href="#" onclick="showSection('contacte')" style="color: #ECF0F1; text-decoration: none; font-size: 0.95rem;">Contacte</a></li>
+                <h4>Enllaços</h4>
+                <ul style="list-style: none;">
+                    <li><a href="#" onclick="showSection('inici')" style="color: #ECF0F1;">Inici</a></li>
+                    <li><a href="#" onclick="showSection('macroentorn')" style="color: #ECF0F1;">Macroentorn</a></li>
+                    <li><a href="#" onclick="showSection('microentorn')" style="color: #ECF0F1;">Microentorn</a></li>
+                    <li><a href="#" onclick="showSection('rsc-dafo')" style="color: #ECF0F1;">RSC i DAFO</a></li>
                 </ul>
             </div>
-            
             <div>
-                <h4 style="color: #BDC3C7; margin-bottom: 1.2rem; font-weight: 500;">Contacte</h4>
-                <p style="margin-bottom: 0.7rem; font-size: 0.95rem;"><i class="fas fa-phone" style="margin-right: 0.5rem; color: #BDC3C7;"></i> +34 93 123 45 67</p>
-                <p style="margin-bottom: 0.7rem; font-size: 0.95rem;"><i class="fas fa-envelope" style="margin-right: 0.5rem; color: #BDC3C7;"></i> info@creairelaxa.cat</p>
-                <p style="font-size: 0.95rem;"><i class="fas fa-clock" style="margin-right: 0.5rem; color: #BDC3C7;"></i> Dilluns-Divendres: 10:00-20:00</p>
-                
-                <div class="social-links" style="margin-top: 1.8rem;">
-                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                <h4>Contacte</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Passeig de Gràcia, 85 · Barcelona</p>
+                <p><i class="fas fa-envelope"></i> info@creairelaxa.cat</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
-        
-        <div style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p style="color: #BDC3C7; font-size: 0.95rem;">&copy; 2026 Crea i Relaxa - Tallers Creatius i Benestar. Tots els drets reservats.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #95A5A6;">Projecte emprenedor AEA1 - Desenvolupat per l'equip promotor</p>
+        <div style="margin-top: 2rem; border-top: 1px solid #34495E; padding-top: 2rem;">
+            <p>© 2026 Crea i Relaxa · Projecte Acadèmic · Grau Superior en Administració i Finances</p>
         </div>
     </footer>
 
     <script>
         function showSection(sectionName) {
-            const sections = ['inici', 'tallers', 'nosaltres', 'contacte'];
+            const sections = ['inici', 'macroentorn', 'microentorn', 'rsc-dafo', 'localitzacio', 'tallers', 'nosaltres'];
             const navLinks = document.querySelectorAll('.nav-links a');
             
             sections.forEach(section => {
                 const element = document.getElementById(section);
-                if (section === sectionName) {
-                    element.classList.remove('section-hidden');
-                } else {
-                    element.classList.add('section-hidden');
+                if (element) {
+                    if (section === sectionName) {
+                        element.classList.remove('section-hidden');
+                    } else {
+                        element.classList.add('section-hidden');
+                    }
                 }
             });
             
@@ -1010,30 +975,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            const nom = document.getElementById('nom').value;
-            const taller = document.getElementById('taller').value;
-            const tallersNoms = {
-                'pintura': 'Pintura i Aquarella',
-                'ceramica': 'Ceramica i Modelatge',
-                'manualitats': 'Manualitats i Collage',
-                'artterapia': 'Art-terapia',
-                'mixtes': 'Tecniques Mixtes',
-                'infantils': 'Tallers Infantils'
-            };
-            
-            let missatge = `Gracies ${nom}! El teu missatge s'ha enviat correctament.`;
-            if (taller && tallersNoms[taller]) {
-                missatge += `\n\nT'has interessat pel taller de ${tallersNoms[taller]}. Ens posarem en contacte amb tu aviat per donar-te mes informacio.`;
-            } else {
-                missatge += `\n\nEns posarem en contacte amb tu aviat.`;
-            }
-            
-            alert(missatge);
-            event.target.reset();
-        }
-
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 80) {
@@ -1045,7 +986,6 @@
             }
         });
 
-        // Inicializar la navegacion
         document.addEventListener('DOMContentLoaded', function() {
             showSection('inici');
         });
