@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDOR - Teatre de Titelles Nadalencs</title>
+    <style>
+        :root {
+            --rojo-escenico: #c41e3a;     /* Rojo teatral profundo */
+            --dorado-luz: #d4af37;        /* Dorado de focos */
+            --verde-nadal: #2e8b57;       /* Verde navideño */
+            --negro-telon: #1a1a1a;       /* Negro de telón */
+            --beige-papel: #f5f0e6;       /* Beige de papel antiguo */
+            --crema-escena: #fffaf0;      /* Crema de iluminación */
+            --bordo-teatro: #8b0000;      /* Bordó de cortinas */
+            --plateado-hilo: #c0c0c0;     /* Plateado de hilos */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        body {
+            background-color: var(--beige-papel);
+            color: var(--negro-telon);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(var(--dorado-luz) 1px, transparent 1px),
+                radial-gradient(var(--rojo-escenico) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            background-position: 0 0, 25px 25px;
+            background-blend-mode: overlay;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(135deg, var(--negro-telon) 0%, var(--bordo-teatro) 100%);
+            color: var(--crema-escena);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
+            border-bottom: 5px solid var(--dorado-luz);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-visual {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--rojo-escenico) 0%, var(--bordo-teatro) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--dorado-luz);
+            box-shadow: 0 4px 12px rgba(196, 30, 58, 0.4);
+        }
+        
+        .logo-text {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: var(--dorado-luz);
+            font-family: 'Playfair Display', 'Georgia', serif;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo-subtitle {
+            font-size: 1.2rem;
+            color: var(--plateado-hilo);
+            font-style: italic;
+            margin-top: -5px;
+            border-left: 3px solid var(--rojo-escenico);
+            padding-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: var(--crema-escena);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            border: 2px solid transparent;
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        nav a:hover {
+            background: var(--rojo-escenico);
+            border-color: var(--dorado-luz);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.3);
+        }
+        
+        nav a.active {
+            background: linear-gradient(135deg, var(--dorado-luz) 0%, #f4d03f 100%);
+            color: var(--negro-telon);
+            border-color: var(--rojo-escenico);
+        }
+        
+        /* Hero Section Teatral */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(139, 0, 0, 0.8)),
+                        url('https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--crema-escena);
+            text-align: center;
+            padding: 120px 20px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(212, 175, 55, 0.1) 2px,
+                    rgba(212, 175, 55, 0.1) 4px
+                );
+            pointer-events: none;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            color: var(--dorado-luz);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .tagline {
+            font-size: 2.2rem;
+            font-style: italic;
+            color: var(--crema-escena);
+            margin: 25px auto;
+            padding: 15px 40px;
+            display: inline-block;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(196, 30, 58, 0.7) 20%, 
+                rgba(196, 30, 58, 0.7) 80%, 
+                transparent 100%);
+            border-top: 2px solid var(--dorado-luz);
+            border-bottom: 2px solid var(--dorado-luz);
+            letter-spacing: 2px;
+        }
+        
+        /* Secciones */
+        .section {
+            display: none;
+            padding: 80px 0;
+            animation: fadeIn 0.6s ease;
+            position: relative;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: var(--bordo-teatro);
+            position: relative;
+            padding-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                var(--dorado-luz), 
+                var(--rojo-escenico), 
+                var(--dorado-luz));
+            border-radius: 2px;
+        }
+        
+        /* Cards Teatrales */
+        .section-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .card {
+            background: linear-gradient(145deg, var(--crema-escena), #fff5e6);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 
+                0 10px 30px rgba(139, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, 
+                var(--dorado-luz), 
+                var(--rojo-escenico), 
+                var(--verde-nadal));
+        }
+        
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(196, 30, 58, 0.25),
+                0 0 0 3px var(--dorado-luz),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border-color: var(--rojo-escenico);
+        }
+        
+        .card h3 {
+            color: var(--bordo-teatro);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            border-bottom: 2px solid var(--dorado-luz);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        /* Home Section */
+        .welcome-message {
+            text-align: center;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 40px;
+            background: linear-gradient(145deg, var(--crema-escena), #fff5e6);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(139, 0, 0, 0.1);
+            border: 2px solid var(--dorado-luz);
+            position: relative;
+        }
+        
+        .welcome-message::before {
+            content: '🎭';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            background: var(--rojo-escenico);
+            color: var(--dorado-luz);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--dorado-luz);
+        }
+        
+        /* Cuentos Especiales */
+        .story-card {
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .story-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--dorado-luz), #f4d03f);
+            color: var(--bordo-teatro);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .story-card:hover .story-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        /* Modal Teatral */
+        .story-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: linear-gradient(145deg, var(--crema-escena), #fff5e6);
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 900px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            border: 5px solid var(--dorado-luz);
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.5);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--bordo-teatro);
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            background: var(--dorado-luz);
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            background: var(--rojo-escenico);
+            color: var(--crema-escena);
+            transform: rotate(90deg);
+        }
+        
+        /* Formulario de Contacto */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, var(--crema-escena), #fff5e6);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15);
+            border: 2px solid var(--dorado-luz);
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--bordo-teatro);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--plateado-hilo);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--rojo-escenico);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.2);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--rojo-escenico) 0%, var(--bordo-teatro) 100%);
+            color: var(--crema-escena);
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 3px solid var(--dorado-luz);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(196, 30, 58, 0.4);
+            background: linear-gradient(135deg, var(--bordo-teatro) 0%, #9b0000 100%);
+        }
+        
+        /* Footer Teatral */
+        footer {
+            background: linear-gradient(135deg, var(--negro-telon) 0%, #000 100%);
+            color: var(--crema-escena);
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+            border-top: 5px solid var(--dorado-luz);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--rojo-escenico), 
+                var(--dorado-luz), 
+                var(--rojo-escenico), 
+                transparent);
+        }
+        
+        .footer-logo {
+            font-size: 3rem;
+            color: var(--dorado-luz);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+        
+        .footer-tagline {
+            font-size: 1.5rem;
+            color: var(--plateado-hilo);
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 25px;
+            background: rgba(196, 30, 58, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(196, 30, 58, 0.2);
+            transform: translateY(-5px);
+            border-color: var(--dorado-luz);
+        }
+        
+        .contact-item i {
+            color: var(--dorado-luz);
+            font-size: 1.3rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .social-icon {
+            color: var(--crema-escena);
+            font-size: 1.8rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .social-icon:hover {
+            background: var(--rojo-escenico);
+            transform: translateY(-5px) rotate(10deg);
+            border-color: var(--dorado-luz);
+            color: var(--dorado-luz);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.5rem;
+                padding: 10px 20px;
+            }
+            
+            .welcome-message {
+                padding: 30px 20px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .logo-text {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo-visual">
+                        <i class="fas fa-theater-masks" style="font-size: 2.5rem; color: var(--dorado-luz);"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">ANDOR</div>
+                        <div class="logo-subtitle">Teatre de Titelles Nadalencs</div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#inici" class="nav-link active" data-section="inici">INICI</a></li>
+                        <li><a href="#sobre-nosaltres" class="nav-link" data-section="sobre-nosaltres">SOBRE NOSALTRES</a></li>
+                        <li><a href="#conte-nadalencs" class="nav-link" data-section="conte-nadalencs">CONTE NADALENCS</a></li>
+                        <li><a href="#espectacles" class="nav-link" data-section="espectacles">ESPECTACLES</a></li>
+                        <li><a href="#galeria" class="nav-link" data-section="galeria">GALERIA</a></li>
+                        <li><a href="#contacte" class="nav-link" data-section="contacte">CONTACTE</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section Teatral -->
+    <section class="hero">
+        <div class="container">
+            <h1>ANDOR TEATRE DE TITELLES</h1>
+            <div class="tagline">"Màgia i Tradició en cada fil"</div>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">Espectacles de titelles nadalencs que captiven la imaginació i toquen el cor</p>
+        </div>
+    </section>
+
+    <!-- Secciones de Contenido -->
+    <div class="container">
+        <!-- Inici -->
+        <section id="inici" class="section active">
+            <div class="welcome-message">
+                <h2 style="color: var(--bordo-teatro); margin-bottom: 25px;">BENVINGUTS AL MÓN DE ANDOR</h2>
+                <p>Som una companyia de Barcelona especialitzada en teatre de titelles nadalencs. Amb més de 8 anys d'experiència, portem la màgia del Nadal als infants a través de l'art del titella, combinant tècniques tradicionals amb narratives contemporànies.</p>
+                <p style="margin-top: 20px;">Els nostres espectacles no només entretenen, sinó que educa en valors nadalencs com la generositat, l'amistat i la solidaritat, sempre amb un toc de màgia teatral.</p>
+            </div>
+            
+            <h2 class="section-title">EL NOSTRE COMPROMÍS</h2>
+            <div class="section-content">
+                <div class="card">
+                    <i class="fas fa-hat-wizard" style="font-size: 2.5rem; color: var(--rojo-escenico); margin-bottom: 20px;"></i>
+                    <h3>Màgia Teatral</h3>
+                    <p>Creem experiències úniques amb efectes especials, il·luminació dramàtica i titelles que semblen prendre vida pròpia.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-heart" style="font-size: 2.5rem; color: var(--rojo-escenico); margin-bottom: 20px;"></i>
+                    <h3>Valors Nadalencs</h3>
+                    <p>Transmetem els valors autèntics del Nadal: família, generositat, empatia i esperança a través de històries emocionants.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-hands-helping" style="font-size: 2.5rem; color: var(--rojo-escenico); margin-bottom: 20px;"></i>
+                    <h3>Artesania</h3>
+                    <p>Cada titella és una obra d'art única, creada a mà amb materials de qualitat i detalls que les fan especialment màgiques.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Nosaltres -->
+        <section id="sobre-nosaltres" class="section">
+            <h2 class="section-title">SOBRE NOSALTRES</h2>
+            <div class="section-content">
+                <div class="card">
+                    <h3>La nostra Història</h3>
+                    <p>ANDOR va néixer el 2015 quan un grup d'amics titellaires es van unir per recuperar la tradició dels titelles nadalencs. Avui som referents a Barcelona amb més de 15 espectacles al nostre repertori.</p>
+                    <p style="margin-top: 15px;"><strong>Més de 500 actuacions</strong> realitzades a escoles, teatres i centres culturals de tot Catalunya.</p>
+                </div>
+                <div class="card">
+                    <h3>La nostra Filosofia</h3>
+                    <p>Creiem que el teatre de titelles és una eina poderosa per educar en valors. Cada espectacle està dissenyat no només per entretenir, sinó per deixar una petjada positiva en el cor dels més petits.</p>
+                    <p style="margin-top: 15px;"><strong>"Educar entretenint"</strong> és el nostre lema intern.</p>
+                </div>
+                <div class="card">
+                    <h3>L'Equip ANDOR</h3>
+                    <p>Contem amb titellaires professionals, escenògrafs, il·luminadors i guionistes especialitzats en teatre infantil. Tots compartim la passió per portar la màgia del Nadal als infants.</p>
+                    <p style="margin-top: 15px;"><strong>Passió + Professionalitat = Màgia</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conte Nadalencs -->
+        <section id="conte-nadalencs" class="section">
+            <h2 class="section-title">ELS NOSTRES CONTE NADALENCS</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px; color: var(--bordo-teatro);">Tres històries clàssiques adaptades amb la màgia dels nostres titelles</p>
+            
+            <div class="section-content">
+                <div class="card story-card" data-story="cascanueces">
+                    <div class="story-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>El Trencanous</h3>
+                    <p>L'adaptació del clàssic conte d'Hoffman amb música en directe i titelles ballarins.</p>
+                    <div style="margin-top: 20px; padding: 10px; background: rgba(212, 175, 55, 0.1); border-radius: 8px;">
+                        <p><strong>Edat:</strong> 3-10 anys</p>
+                        <p><strong>Durada:</strong> 50 minuts</p>
+                    </div>
+                </div>
+                
+                <div class="card story-card" data-story="krampus">
+                    <div class="story-icon">
+                        <i class="fas fa-holly-berry"></i>
+                    </div>
+                    <h3>Krampus</h3>
+                    <p>La tradició alpina europea adaptada per als més valents, amb efectes especials i atmosfera màgica.</p>
+                    <div style="margin-top: 20px; padding: 10px; background: rgba(212, 175, 55, 0.1); border-radius: 8px;">
+                        <p><strong>Edat:</strong> 6-12 anys</p>
+                        <p><strong>Durada:</strong> 40 minuts</p>
+                    </div>
+                </div>
+                
+                <div class="card story-card" data-story="dickens">
+                    <div class="story-icon">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <h3>Conte de Nadal</h3>
+                    <p>El clàssic de Charles Dickens amb titelles d'ombres i marionetes que canvien en escena.</p>
+                    <div style="margin-top: 20px; padding: 10px; background: rgba(212, 175, 55, 0.1); border-radius: 8px;">
+                        <p><strong>Edat:</strong> 4-12 anys</p>
+                        <p><strong>Durada:</strong> 55 minuts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Espectacles -->
+        <section id="espectacles" class="section">
+            <h2 class="section-title">ELS NOSTRES ESPECTACLES</h2>
+            
+            <div class="section-content">
+                <div class="card">
+                    <h3>Espectacle "El Trencanous"</h3>
+                    <p><strong>Descripció:</strong> Un viatge màgic al Regne dels Dolsos amb el nostre Trencanous i la Clara.</p>
+                    <p><strong>Elements especials:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Música en directe amb violí i piano</li>
+                        <li>Titelles ballarins amb moviments fluïts</li>
+                        <li>Efectes de neu artificial</li>
+                        <li>Escenografia modular que canvia màgicament</li>
+                    </ul>
+                    <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(46, 139, 87, 0.1), rgba(212, 175, 55, 0.1)); border-radius: 8px;">
+                        <p><strong>Valors educatius:</strong> Valentia, imaginació, amistat</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Espectacle "Krampus"</h3>
+                    <p><strong>Descripció:</strong> Una aventura emocionant que explora la tradició del Krampus amb un missatge positiu.</p>
+                    <p><strong>Elements especials:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Titella de Krampus de 1.5 metres amb efectes de so</li>
+                        <li>Il·luminació dramàtica i efectes de fum</li>
+                        <li>Interacció amb el públic</li>
+                        <li>Final redemptor amb missatge positiu</li>
+                    </ul>
+                    <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(139, 0, 0, 0.1)); border-radius: 8px;">
+                        <p><strong>Valors educatius:</strong> Responsabilitat, conseqüències, bondat</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Espectacle "Conte de Nadal"</h3>
+                    <p><strong>Descripció:</strong> La transformació d'Scrooge vista a través dels ulls dels nostres titelles.</p>
+                    <p><strong>Elements especials:</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>3 titelles diferents per mostrar l'evolució d'Scrooge</li>
+                        <li>Efectes d'ombres xineses pels fantasmes</li>
+                        <li>Escenografia victoriana detallada</li>
+                        <li>So ambiental que transporta a l'època</li>
+                    </ul>
+                    <div style="margin-top: 20px; padding: 15px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(46, 139, 87, 0.1)); border-radius: 8px;">
+                        <p><strong>Valors educatius:</strong> Generositat, empatia, canvi personal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria -->
+        <section id="galeria" class="section">
+            <h2 class="section-title">GALERIA</h2>
+            
+            <div class="section-content">
+                <div class="card">
+                    <h3>Els Nostres Titelles</h3>
+                    <p style="text-align: center; padding: 30px; font-style: italic; color: var(--bordo-teatro);">
+                        <i class="fas fa-camera" style="font-size: 3rem; color: var(--dorado-luz); display: block; margin-bottom: 20px;"></i>
+                        Pròximament: Descobreix els nostres personatges màgics
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Darrere l'Escena</h3>
+                    <p style="text-align: center; padding: 30px; font-style: italic; color: var(--bordo-teatro);">
+                        <i class="fas fa-mask" style="font-size: 3rem; color: var(--dorado-luz); display: block; margin-bottom: 20px;"></i>
+                        Pròximament: El procés creatiu dels nostres espectacles
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3>Moments Màgics</h3>
+                    <p style="text-align: center; padding: 30px; font-style: italic; color: var(--bordo-teatro);">
+                        <i class="fas fa-star" style="font-size: 3rem; color: var(--dorado-luz); display: block; margin-bottom: 20px;"></i>
+                        Pròximament: Les reaccions dels nostres petits espectadors
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacte -->
+        <section id="contacte" class="section">
+            <h2 class="section-title">CONTACTA AMB NOSALTRES</h2>
+            
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="nom"><i class="fas fa-user"></i> Nom complet *</label>
+                    <input type="text" id="nom" required placeholder="El teu nom i cognoms">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Correu electrònic *</label>
+                    <input type="email" id="email" required placeholder="exemple@email.cat">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefon"><i class="fas fa-phone"></i> Telèfon</label>
+                    <input type="tel" id="telefon" placeholder="+34 600 000 000">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tipus-esdeveniment"><i class="fas fa-calendar-alt"></i> Tipus d'esdeveniment *</label>
+                    <select id="tipus-esdeveniment" required>
+                        <option value="">Selecciona una opció</option>
+                        <option value="escola">Esperada escolar</option>
+                        <option value="teatre">Funció de teatre</option>
+                        <option value="privada">Celebració privada</option>
+                        <option value="centre-cultural">Centre cultural</option>
+                        <option value="altres">Altres</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="espectacle"><i class="fas fa-theater-masks"></i> Espectacle d'interès *</label>
+                    <select id="espectacle" required>
+                        <option value="">Tria un espectacle</option>
+                        <option value="trencanous">El Trencanous</option>
+                        <option value="krampus">Krampus</option>
+                        <option value="conte-nadal">Conte de Nadal</option>
+                        <option value="no-se">Encara no ho sé</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="missatge"><i class="fas fa-comment"></i> Missatge *</label>
+                    <textarea id="missatge" rows="6" required placeholder="Explica'ns sobre el teu esdeveniment: data, lloc, nombre d'assistents, edat dels infants..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> ENVIAR SOL·LICITUD
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal per a Conte -->
+    <div id="storyModal" class="story-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer Teatral -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">ANDOR</div>
+            <div class="footer-tagline">"Màgia i Tradició en cada fil"</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Seu a Barcelona</strong>
+                        <div style="font-size: 0.9rem;">Actuem a tot Catalunya</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>info@andor-titelles.cat</strong>
+                        <div style="font-size: 0.9rem;">Resposta en 24-48 hores</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>+34 93 123 45 67</strong>
+                        <div style="font-size: 0.9rem;">De dilluns a divendres 9-18h</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-icon" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social-icon" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+            
+            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(212, 175, 55, 0.3);">
+                <p style="font-size: 0.9rem; color: var(--plateado-hilo);">
+                    &copy; 2024 ANDOR - Teatre de Titelles Nadalencs. Tots els drets reservats.<br>
+                    Disseny teatral amb la màgia dels titelles
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navegació entre seccions
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Eliminar classe active de tots els enllaços
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                
+                // Afegir classe active a l'enllaç clicat
+                this.classList.add('active');
+                
+                // Amagar totes les seccions
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Mostrar la secció corresponent
+                const sectionId = this.getAttribute('data-section');
+                document.getElementById(sectionId).classList.add('active');
+                
+                // Scroll suau a la secció
+                window.scrollTo({
+                    top: document.querySelector('.hero').offsetHeight,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modal per a conte
+        const storyCards = document.querySelectorAll('.story-card');
+        const storyModal = document.getElementById('storyModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.querySelector('.close-modal');
+
+        // Contingut dels conte (actualitzat amb els tres principals)
+        const stories = {
+            cascanueces: `
+                <h2 style="color: var(--bordo-teatro); margin-bottom: 20px;">EL TRENCANOUS</h2>
+                <h3 style="color: var(--rojo-escenico); margin-bottom: 30px;">Una adaptació màgica del clàssic d'Hoffman</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <div>
+                        <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">📖 La Història</h4>
+                        <p>La Clara rep un trencanous de Nadal que a mitjanit pren vida i l'endinsa en una aventura màgica al Regne dels Dolsos, on haurà de lluitar contra el Rei dels Ratolins.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">🎭 Elements Especials</h4>
+                        <ul>
+                            <li>Titelles ballarins amb moviments de ballet</li>
+                            <li>Música de Txaikovski en directe</li>
+                            <li>Canvis d'escenografia màgics</li>
+                            <li>Efectes de llum que simulen neu</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(46, 139, 87, 0.1)); padding: 25px; border-radius: 10px; border-left: 5px solid var(--dorado-luz);">
+                    <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">🎯 Informació de l'Espectacle</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                        <div>
+                            <strong>Edat recomanada:</strong><br>
+                            3-10 anys
+                        </div>
+                        <div>
+                            <strong>Durada:</strong><br>
+                            50 minuts
+                        </div>
+                        <div>
+                            <strong>Nombre de titellaires:</strong><br>
+                            3 professionals
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(196, 30, 58, 0.05); border-radius: 10px;">
+                    <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">💝 Valors Educatius</h4>
+                    <p><strong>Valentia:</strong> Enfrontar-se als temors<br>
+                    <strong>Imaginació:</strong> Crear mons fantàstics<br>
+                    <strong>Amistat:</strong> La importància dels llaços afectius</p>
+                </div>
+            `,
+            krampus: `
+                <h2 style="color: var(--bordo-teatro); margin-bottom: 20px;">KRAMPUS</h2>
+                <h3 style="color: var(--rojo-escenico); margin-bottom: 30px;">La tradició alpina amb missatge positiu</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <div>
+                        <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">📖 La Història</h4>
+                        <p>En un poble de les muntanyes, els nens han estat una mica desobedients aquest any. El Krampus, el guardià de la tradició, els visita per recordar-los la importància de ser bons, però sempre amb la possibilitat de redimir-se.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">🎭 Elements Especials</h4>
+                        <ul>
+                            <li>Titella de Krampus de 1.5 metres amb moviments reals</li>
+                            <li>Efectes de so amb cadenes i campanes</li>
+                            <li>Il·luminació dramàtica i atmosfèrica</li>
+                            <li>Interacció directa amb el públic infantil</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(139, 0, 0, 0.1)); padding: 25px; border-radius: 10px; border-left: 5px solid var(--rojo-escenico);">
+                    <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">🎯 Informació de l'Espectacle</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                        <div>
+                            <strong>Edat recomanada:</strong><br>
+                            6-12 anys
+                        </div>
+                        <div>
+                            <strong>Durada:</strong><br>
+                            40 minuts
+                        </div>
+                        <div>
+                            <strong>Nivell d'intensitat:</strong><br>
+                            Moderat (no és terror)
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(139, 0, 0, 0.05); border-radius: 10px;">
+                    <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">💝 Valors Educatius</h4>
+                    <p><strong>Responsabilitat:</strong> Pels actes propis<br>
+                    <strong>Conseqüències:</strong> Entendre que les accions tenen resultats<br>
+                    <strong>Bondat:</strong> L'opció de ser millor persona sempre està present</p>
+                </div>
+            `,
+            dickens: `
+                <h2 style="color: var(--bordo-teatro); margin-bottom: 20px;">CONTE DE NADAL</h2>
+                <h3 style="color: var(--rojo-escenico); margin-bottom: 30px;">El clàssic de Dickens amb titelles d'ombres</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <div>
+                        <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">📖 La Història</h4>
+                        <p>Ebenezer Scrooge, un home avar i solitari, rep la visita de tres fantasmes nadalencs que li mostren el seu passat, present i futur. Una jornada de reflexió que canviarà la seva vida per sempre.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">🎭 Elements Especials</h4>
+                        <ul>
+                            <li>3 titelles diferents per a Scrooge (evolució)</li>
+                            <li>Efectes d'ombres xineses pels fantasmes</li>
+                            <li>Escenografia victoriana detallada</li>
+                            <li>So ambiental que transporta al Londres del segle XIX</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(46, 139, 87, 0.1)); padding: 25px; border-radius: 10px; border-left: 5px solid var(--verde-nadal);">
+                    <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">🎯 Informació de l'Espectacle</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                        <div>
+                            <strong>Edat recomanada:</strong><br>
+                            4-12 anys
+                        </div>
+                        <div>
+                            <strong>Durada:</strong><br>
+                            55 minuts
+                        </div>
+                        <div>
+                            <strong>Nombre de personatges:</strong><br>
+                            9 titelles diferents
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: rgba(46, 139, 87, 0.05); border-radius: 10px;">
+                    <h4 style="color: var(--bordo-teatro); margin-bottom: 15px;">💝 Valors Educatius</h4>
+                    <p><strong>Generositat:</strong> Compartir amb els altres<br>
+                    <strong>Empatia:</strong> Posar-se en la pell dels altres<br>
+                    <strong>Canvi personal:</strong> És possible millorar sempre</p>
+                </div>
+            `
+        };
+
+        storyCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const storyType = this.getAttribute('data-story');
+                modalContent.innerHTML = stories[storyType];
+                storyModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Evitar scroll en fons
+            });
+        });
+
+        // Tancar modal
+        closeModal.addEventListener('click', () => {
+            storyModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Tancar modal al clicar fora
+        window.addEventListener('click', (e) => {
+            if (e.target === storyModal) {
+                storyModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Formulari de contacte
+        document.querySelector('.submit-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const esdeveniment = document.getElementById('tipus-esdeveniment').value;
+            const espectacle = document.getElementById('espectacle').value;
+            const missatge = document.getElementById('missatge').value;
+            
+            if (!nom || !email || !esdeveniment || !espectacle || !missatge) {
+                alert('Si us plau, omple tots els camps obligatoris (*)');
+                return;
+            }
+            
+            // Aquí normalment s'enviaria el formulari a un servidor
+            alert(`Gràcies ${nom}! La teva sol·licitud per a "${espectacle}" ha estat rebuda. Et contactarem en 24-48 hores al correu ${email}.`);
+            
+            // Netejar formulari
+            document.getElementById('nom').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('telefon').value = '';
+            document.getElementById('tipus-esdeveniment').value = '';
+            document.getElementById('espectacle').value = '';
+            document.getElementById('missatge').value = '';
+        });
+
+        // Inicialitzar la primera secció com a activa
+        document.getElementById('inici').classList.add('active');
+    </script>
+</body>
+</html>
