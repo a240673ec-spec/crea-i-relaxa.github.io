@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crea i Relaxa - Pla d'Empresa Complet</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>ANDOR · Teatre de Titelles Infantils</title>
     <style>
         * {
             margin: 0;
@@ -12,160 +11,160 @@
             box-sizing: border-box;
         }
 
+        /* 🌈 Paleta logotipo infantil + teatral (cálida, alegre, suave) */
+        :root {
+            --teal-soft: #2b8c7c;      /* turquesa/verd logotipo */
+            --coral-warm: #f28b6c;     /* coral càlid, alegre */
+            --mustard-light: #f7d44a;  /* groc mostassa, llum escènica */
+            --cream-pure: #fff9ef;     /* fons crema suau */
+            --charcoal-soft: #2e2e2e;  /* gris fosc per textos, elegant */
+            --sand-stone: #f0e2c5;     /* sorra per detalls */
+            --white-glass: rgba(255, 255, 245, 0.92);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            background-color: var(--cream-pure);
+            color: var(--charcoal-soft);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
 
-        header {
-            background: #ffffff;
-            color: #2C3E50;
-            padding: 0.8rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(44, 62, 80, 0.08);
-            border-bottom: 1px solid #EAEAEA;
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-img {
-            height: 60px;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-img:hover {
-            transform: scale(1.03);
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text h1 {
-            font-size: 1.6rem;
+        /* tipografia amigable i moderna */
+        h1, h2, h3, .logo-text {
+            font-family: 'Poppins', 'Inter', sans-serif;
             font-weight: 600;
-            color: #2C3E50;
-            margin-bottom: 0.15rem;
-            line-height: 1.2;
             letter-spacing: -0.3px;
         }
 
-        .logo-text p {
-            font-size: 0.85rem;
-            color: #7F8C8D;
-            opacity: 0.9;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.8rem;
-        }
-
-        .nav-links a {
-            color: #34495E;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 500;
-            padding: 0.5rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            background-color: rgba(68, 108, 138, 0.05);
-            color: #446C8A;
-            transform: translateY(-1px);
-        }
-
-        section {
-            padding: 5rem 2rem;
-            max-width: 1400px;
+        .container {
+            max-width: 1280px;
             margin: 0 auto;
+            padding: 0 28px;
         }
 
-        .section-hidden {
-            display: none;
+        /* HEADER minimalista pero juganet */
+        header {
+            background: var(--white-glass);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid rgba(242, 139, 108, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
         }
 
-        .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.95)), 
-                        url('https://images.pexels.com/photos/30489756/pexels-photo-30489756.jpeg');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            background: var(--teal-soft);
+            width: 52px;
+            height: 52px;
+            border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: #2C3E50;
-            margin-top: 60px;
+            font-size: 28px;
+            box-shadow: 0 8px 14px rgba(43, 140, 124, 0.2);
+            transition: transform 0.2s ease;
         }
 
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1.2rem;
-            animation: fadeInUp 1s ease-out;
-            color: #2C3E50;
-            font-weight: 600;
+        .logo-icon:hover {
+            transform: scale(1.02);
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--teal-soft);
             letter-spacing: -0.5px;
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease-out 0.2s both;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #34495E;
-            line-height: 1.7;
-        }
-
-        .cta-button {
-            background: #446C8A;
-            color: white;
-            padding: 1rem 2.8rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.05rem;
+        .logo-sub {
+            font-size: 0.85rem;
+            color: var(--coral-warm);
             font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-            animation: fadeInUp 1s ease-out 0.4s both;
-            letter-spacing: 0.3px;
+            margin-top: 4px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(68, 108, 138, 0.25);
-            background: #3A5C75;
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
         }
 
-        @keyframes fadeInUp {
+        nav a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--charcoal-soft);
+            padding: 8px 0;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            border-bottom-color: var(--coral-warm);
+            color: var(--teal-soft);
+        }
+
+        /* HERO animat & minimal */
+        .hero-mini {
+            background: linear-gradient(135deg, #fff5e8 0%, #fef3e2 100%);
+            padding: 64px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-mini h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--teal-soft), var(--coral-warm));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+            animation: fadeUp 0.7s ease;
+        }
+
+        .hero-mini p {
+            font-size: 1.3rem;
+            color: #4b4b4b;
+            max-width: 680px;
+            margin: 0 auto;
+            animation: fadeUp 0.7s 0.1s backwards;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--mustard-light);
+            color: #2e3a3a;
+            border-radius: 60px;
+            padding: 6px 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+            backdrop-filter: blur(4px);
+        }
+
+        @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(25px);
+                transform: translateY(24px);
             }
             to {
                 opacity: 1;
@@ -173,823 +172,589 @@
             }
         }
 
-        h2 {
-            color: #2C3E50;
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+        /* seccions */
+        .section {
+            display: none;
+            padding: 70px 0;
+            animation: fadeIn 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 48px;
+            color: var(--teal-soft);
             text-align: center;
             font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        h3 {
-            color: #2C3E50;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-        }
-
-        h4 {
-            color: #2C3E50;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-
-        /* TALLERS SECTION */
-        .tallers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .taller-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            border: 1px solid #F0F0F0;
-            border-top: 3px solid #446C8A;
-        }
-
-        .taller-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border-color: #E0E0E0;
-        }
-
-        .taller-img {
-            width: 100%;
-            height: 200px;
-            border-radius: 6px;
-            object-fit: cover;
-            margin-bottom: 1.2rem;
-        }
-
-        /* NOSALTRES - EQUIP */
-        .equip-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .equip-card {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            border: 1px solid #F0F0F0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .equip-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.2rem;
-            border: 3px solid #446C8A;
-        }
-
-        /* TAULES */
-        .taula-container {
-            overflow-x: auto;
-            margin: 2rem 0;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #F0F0F0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
-        }
-
-        th {
-            background: #446C8A;
-            color: white;
-            padding: 1rem;
-            font-weight: 500;
-        }
-
-        td {
-            padding: 1rem;
-            border-bottom: 1px solid #F0F0F0;
-            vertical-align: top;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tr:hover td {
-            background: #F9F9F9;
-        }
-
-        .competencia-positiva {
-            color: #27AE60;
-            font-weight: 500;
-        }
-
-        .competencia-negativa {
-            color: #E74C3C;
-            font-weight: 500;
-        }
-
-        /* DAFO */
-        .dafo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .dafo-box {
-            background: white;
-            border-radius: 8px;
-            padding: 1.8rem;
-            border: 1px solid #F0F0F0;
-        }
-
-        .dafo-box h4 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
-        }
-
-        .dafo-box ul {
-            list-style: none;
-        }
-
-        .dafo-box li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
+            letter-spacing: -0.3px;
             position: relative;
         }
 
-        .dafo-box li:before {
-            content: "•";
-            color: #446C8A;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
+        .section-title:after {
+            content: "🎭";
+            font-size: 1.6rem;
+            margin-left: 12px;
+            opacity: 0.6;
         }
 
-        .fortaleses { border-top: 4px solid #27AE60; }
-        .debilitats { border-top: 4px solid #E74C3C; }
-        .oportunitats { border-top: 4px solid #3498DB; }
-        .amenaces { border-top: 4px solid #F39C12; }
-
-        /* MAPA */
-        .mapa-localitzacio {
-            margin: 2rem 0;
+        /* Cards minimalistes amb animació */
+        .cards-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: start;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
         }
 
-        .mapa-frame {
-            width: 100%;
-            height: 350px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        .detalls-local {
+        .card-mini {
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #F0F0F0;
+            border-radius: 32px;
+            padding: 28px 24px;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02);
+            border: 1px solid #ffe3d4;
+            cursor: pointer;
         }
 
-        .croquis-local {
-            background: #f5f5f5;
-            padding: 2rem;
-            border-radius: 8px;
-            font-family: monospace;
-            line-height: 1.8;
-            border: 1px dashed #446C8A;
+        .card-mini:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 28px -12px rgba(43, 140, 124, 0.18);
+            border-color: var(--coral-warm);
         }
 
-        /* RSC */
-        .rsc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .rsc-card {
-            background: white;
-            padding: 1.8rem;
-            border-radius: 8px;
-            border: 1px solid #F0F0F0;
-            text-align: center;
-        }
-
-        .rsc-icon {
+        .card-icon {
             font-size: 2.5rem;
-            color: #446C8A;
-            margin-bottom: 1rem;
+            margin-bottom: 18px;
+            color: var(--teal-soft);
         }
 
-        /* INFO BOXES */
-        .info-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #F0F0F0;
-            margin: 2rem 0;
+        .card-mini h3 {
+            font-size: 1.7rem;
+            margin-bottom: 12px;
+            color: var(--charcoal-soft);
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            text-align: center;
+        .tag-edat {
+            background: #f0ede8;
+            border-radius: 40px;
+            padding: 6px 14px;
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--teal-soft);
+            margin-top: 16px;
         }
 
-        .stat-item {
-            padding: 1.5rem;
-            background: #f9f9f9;
-            border-radius: 8px;
+        /* story badge animat */
+        .story-card {
+            transition: all 0.2s;
         }
 
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #446C8A;
-            margin-bottom: 0.5rem;
-        }
-
-        /* QR Section */
-        .qr-section {
-            text-align: center;
-            margin-top: 4rem;
-            padding: 2.5rem;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #F0F0F0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .qr-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 1.5rem 0;
-        }
-
-        .qr-code {
-            width: 180px;
-            height: 180px;
-            margin: 1.5rem auto;
-            border: 2px solid #EAEAEA;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: white;
-            padding: 10px;
-            transition: all 0.3s;
-        }
-
-        .qr-code:hover {
-            border-color: #446C8A;
-            transform: scale(1.02);
-        }
-
-        .qr-code img {
+        /* modal estil minimalista */
+        .modal-story {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #2C3E50;
-            color: #ECF0F1;
-            text-align: center;
-            padding: 3.5rem 2rem;
-            margin-top: 4rem;
-            border-top: 1px solid #34495E;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            text-align: left;
-        }
-
-        .footer-logo {
-            height: 65px;
-            width: auto;
-            margin-bottom: 1.2rem;
-            opacity: 0.95;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.2rem;
-            margin-top: 1.2rem;
-            font-size: 1.3rem;
-        }
-
-        .social-links a {
-            color: #ECF0F1;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
+            background: rgba(46, 46, 46, 0.7);
+            backdrop-filter: blur(8px);
             justify-content: center;
-            width: 42px;
-            height: 42px;
-            background: rgba(236, 240, 241, 0.1);
-            border-radius: 50%;
+            align-items: center;
+            z-index: 1000;
         }
 
-        .social-links a:hover {
-            background: #446C8A;
-            transform: translateY(-2px);
+        .modal-card {
+            background: white;
+            max-width: 620px;
+            width: 90%;
+            border-radius: 44px;
+            padding: 32px 36px;
+            position: relative;
+            box-shadow: 0 35px 50px rgba(0,0,0,0.2);
+            animation: scaleUp 0.3s ease;
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.94); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--coral-warm);
+            transition: 0.2s;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+            color: var(--teal-soft);
+        }
+
+        /* formulari */
+        .form-modern {
+            background: white;
+            border-radius: 40px;
+            padding: 44px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid #ffe1cf;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            color: var(--teal-soft);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 60px;
+            border: 1.5px solid #edd9cc;
+            background: #fefcf8;
+            font-size: 1rem;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+
+        textarea {
+            border-radius: 28px;
+            resize: vertical;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--coral-warm);
+            box-shadow: 0 0 0 3px rgba(242, 139, 108, 0.2);
+        }
+
+        .btn-submit {
+            background: var(--teal-soft);
             color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
+        .btn-submit:hover {
+            background: var(--coral-warm);
+            transform: scale(0.98);
+        }
 
-            .hero-content h1 {
+        /* footer suau */
+        footer {
+            background: #faf3e9;
+            border-top: 1px solid #f0e0d0;
+            padding: 48px 0 32px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .social-icons a {
+            color: var(--teal-soft);
+            font-size: 1.6rem;
+            margin: 0 12px;
+            transition: 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: var(--coral-warm);
+            transform: translateY(-3px);
+        }
+
+        /* responsive */
+        @media (max-width: 780px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-mini h1 {
                 font-size: 2.2rem;
             }
-
-            .hero-content p {
-                font-size: 1.1rem;
+            .section-title {
+                font-size: 1.9rem;
             }
-
-            .dafo-grid,
-            .mapa-localitzacio {
-                grid-template-columns: 1fr;
+            .modal-card {
+                padding: 28px 20px;
             }
+        }
 
-            section {
-                padding: 3.5rem 1.5rem;
-            }
+        /* deco animada minimal */
+        .floating {
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo-container">
-                <img src="https://i.ibb.co/Y42PwSSd/logo-crea-i-relaxa.png" alt="Crea i Relaxa" class="logo-img">
-                <div class="logo-text">
-                    <h1>Crea i Relaxa</h1>
-                    <p>Pla d'Empresa - Curs 2025/2026</p>
-                </div>
+
+<header>
+    <div class="container header-content">
+        <div class="logo-area">
+            <div class="logo-icon">
+                🎭
             </div>
-            <ul class="nav-links">
-                <li><a href="#" onclick="showSection('inici')" class="active">Inici</a></li>
-                <li><a href="#" onclick="showSection('macroentorn')">Macroentorn</a></li>
-                <li><a href="#" onclick="showSection('microentorn')">Microentorn</a></li>
-                <li><a href="#" onclick="showSection('rsc-dafo')">RSC i DAFO</a></li>
-                <li><a href="#" onclick="showSection('localitzacio')">Localització</a></li>
-                <li><a href="#" onclick="showSection('tallers')">Tallers</a></li>
-                <li><a href="#" onclick="showSection('nosaltres')">Equip</a></li>
+            <div>
+                <div class="logo-text">ANDOR</div>
+                <div class="logo-sub">teatre de titelles · màgia infantil</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inici" data-section="inici" class="nav-link active">Inici</a></li>
+                <li><a href="#sobre" data-section="sobre" class="nav-link">Companyia</a></li>
+                <li><a href="#contes" data-section="contes" class="nav-link">Contes Nadalencs</a></li>
+                <li><a href="#espectacles" data-section="espectacles" class="nav-link">Espectacles</a></li>
+                <li><a href="#contacte" data-section="contacte" class="nav-link">Contacte</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <!-- INICI / PORTADA -->
-    <section id="inici" class="hero">
-        <div class="hero-content">
-            <h1>Crea i Relaxa</h1>
-            <p>Pla d'Empresa · Grau Superior en Administració i Finances<br>Especialitat Gestió d'Assegurances</p>
-            <p style="font-size: 1.1rem;">Promotors: Ever Cárdenas · Sara Calvo · Jocelyne Rodríguez</p>
-            <button class="cta-button" onclick="showSection('macroentorn')">Explorar l'Estudi d'Entorn</button>
+<section class="hero-mini">
+    <div class="container">
+        <div class="hero-badge">✨ temporada d'hivern 2024 ✨</div>
+        <h1>ANDOR · titelles amb cor</h1>
+        <p>Espectacles delicats, històries que emocionen i titelles que cobren vida. Un teatre pensat per als més petits, amb l'ànima de les grans històries.</p>
+    </div>
+</section>
+
+<div class="container">
+    <!-- SECCIÓ INICI -->
+    <section id="inici" class="section active">
+        <div style="max-width: 800px; margin: 0 auto 60px; text-align: center;">
+            <i class="fa-solid fa-star-of-life" style="color: var(--coral-warm); font-size: 2.2rem; margin-bottom: 16px; display: inline-block;"></i>
+            <h2 class="section-title" style="margin-bottom: 20px;">Benvinguts a ANDOR</h2>
+            <p style="font-size: 1.2rem; color: #3b3b3b;">Som una companyia propera que porta la tradició del teatre de titelles a les escoles i teatres de Catalunya. Amb titelles artesanals i valors nadalencs: generositat, amistat, valentia i màgia compartida.</p>
         </div>
-    </section>
 
-    <!-- MACROENTORN (PESTEL) -->
-    <section id="macroentorn" class="section-hidden">
-        <h2>1.1 Estudi del Macroentorn (PESTEL)</h2>
-        <p style="text-align: center; margin-bottom: 2rem; color: #7F8C8D;">Anàlisi dels factors externs que afecten el projecte a Barcelona</p>
-
-        <div class="stats-grid" style="margin-bottom: 2rem;">
-            <div class="stat-item">
-                <div class="stat-number">2,5%</div>
-                <p>Creixement PIB Catalunya 2026</p>
+        <div class="cards-grid">
+            <div class="card-mini">
+                <div class="card-icon"><i class="fa-regular fa-hand-peace"></i></div>
+                <h3>+8 anys</h3>
+                <p>Més de 500 funcions realitzades, sempre connectant amb els infants a través de l'emoció i el riure.</p>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">8,2%</div>
-                <p>Atur a Barcelona (inferior mitjana)</p>
+            <div class="card-mini">
+                <div class="card-icon"><i class="fa-regular fa-face-smile"></i></div>
+                <h3>Titelles vius</h3>
+                <p>Cada titella és una peça única feta a mà. Moviments suaus, expressius i plens de tendresa.</p>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">387€</div>
-                <p>Despesa anual en oci/cultura</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">1,66M</div>
-                <p>Habitants Barcelona</p>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <h3><i class="fas fa-chart-line" style="color: #446C8A;"></i> Factors Econòmics</h3>
-            <p>Conjuntura favorable per a negocis de benestar: recuperació del poder adquisitiu, preu lloguer comercial assumible (15-25€/m²), inflació controlada (3,2%).</p>
-        </div>
-
-        <div class="info-box">
-            <h3><i class="fas fa-users" style="color: #446C8A;"></i> Factors Demogràfics</h3>
-            <p><strong>Públic objectiu:</strong> 420.000 persones (25-40 anys) + 380.000 persones (41-55 anys). Alta densitat poblacional (15.992 hab/km²) i 31% llars unipersonals.</p>
-        </div>
-
-        <div class="info-box">
-            <h3><i class="fas fa-heart" style="color: #446C8A;"></i> Factors Socioculturals</h3>
-            <p>Increment del 40% en cerca de mindfulness i art-teràpia (Google Trends). 65% dels barcelonins considera important el benestar emocional. Tendència "slow living".</p>
-        </div>
-
-        <div class="info-box">
-            <h3><i class="fas fa-gavel" style="color: #446C8A;"></i> Factors Polítics i Legals</h3>
-            <p>Ajuts disponibles: Barcelona Activa (fins 5.000€), Emprenem Jove, Kit Digital. Llicència d'activitat cultural (menys restrictiva).</p>
-        </div>
-
-        <div class="info-box">
-            <h3><i class="fas fa-microchip" style="color: #446C8A;"></i> Factors Tecnològics</h3>
-            <p>Cobertura 5G, fibra òptica, plataformes de reserva (Eventbrite), alta penetració d'Instagram (68%) i TikTok (45%).</p>
-        </div>
-
-        <div class="qr-section">
-            <h3>Validació de la Idea</h3>
-            <p><strong>Enquesta a 30 persones:</strong> 87% d'interès en assistir als tallers. Preu òptim: 20-22€ per sessió.</p>
-            <div class="qr-container">
-                <div class="qr-code">
-                    <img src="https://i.ibb.co/p6KQhShK/qr-crea-i-relaxa.png" alt="QR Validació">
-                </div>
-                <p>Resultats complets de l'enquesta</p>
+            <div class="card-mini">
+                <div class="card-icon"><i class="fa-regular fa-heart"></i></div>
+                <h3>Valors nadalencs</h3>
+                <p>Empatia, companyonia, esperit nadalenc: cada espectacle deixa una lliçó positiva.</p>
             </div>
         </div>
     </section>
 
-    <!-- MICROENTORN -->
-    <section id="microentorn" class="section-hidden">
-        <h2>1.2 Estudi del Microentorn</h2>
-        <p style="text-align: center; margin-bottom: 2rem;">Anàlisi de competència, proveïdors i clients a l'Eixample</p>
-
-        <h3>Competència Directa</h3>
-        <div class="taula-container">
-            <table>
-                <thead>
-                    <tr><th>Empresa</th><th>Adreça</th><th>Productes</th><th>Punts forts/Febles</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>La Mandràgora</td><td>C/ Consell de Cent, 325</td><td>Tallers ceràmica/pintura</td><td><span class="competencia-positiva">+ Qualitat</span> <span class="competencia-negativa">- Preu elevat</span></td></tr>
-                    <tr><td>Art & Chill</td><td>C/ Villarroel, 145</td><td>Pintura + vi</td><td><span class="competencia-positiva">+ Ambient social</span> <span class="competencia-negativa">- Massa festiu</span></td></tr>
-                    <tr><td>Taller Obert</td><td>C/ Londres, 78</td><td>Cursos trimestrals</td><td><span class="competencia-positiva">+ Comunitat</span> <span class="competencia-negativa">- Compromís alt</span></td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3 style="margin-top: 2rem;">Productes Substitutius</h3>
-        <div class="taula-container">
-            <table>
-                <thead><tr><th>Empresa</th><th>Servei</th><th>Amenaça</th></tr></thead>
-                <tbody>
-                    <tr><td>Yoga Dixit</td><td>Ioga i meditació</td><td>Moderada</td></tr>
-                    <tr><td>Mindfulness BCN</td><td>Programes estrès</td><td>Moderada</td></tr>
-                    <tr><td>Escape Room</td><td>Oci en grup</td><td>Baixa</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3 style="margin-top: 2rem;">Proveïdors</h3>
-        <div class="taula-container">
-            <table>
-                <thead><tr><th>Proveïdor</th><th>Producte</th><th>Adreça</th></tr></thead>
-                <tbody>
-                    <tr><td>Bellas Artes Barcelona</td><td>Pintures, pinzells, ceràmica</td><td>C/ Tallers, 45</td></tr>
-                    <tr><td>Ikea</td><td>Mobiliari</td><td>Gran Via, 648</td></tr>
-                    <tr><td>Aromas Sense</td><td>Olis essencials, espelmes</td><td>C/ Diputació, 239</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h3 style="margin-top: 2rem;">Clients Potencials</h3>
-        <div class="equip-grid">
-            <div class="equip-card">
-                <i class="fas fa-briefcase" style="font-size: 3rem; color: #446C8A; margin-bottom: 1rem;"></i>
-                <h4>Professional estressat/da</h4>
-                <p>30-50 anys, treballadors oficina, necessitat de desconnectar</p>
+    <!-- SOBRE NOSALTRES (minimal) -->
+    <section id="sobre" class="section">
+        <h2 class="section-title">La companyia</h2>
+        <div class="cards-grid">
+            <div class="card-mini">
+                <i class="fa-regular fa-building" style="font-size: 2rem; color: var(--teal-soft); margin-bottom: 16px; display: block;"></i>
+                <h3>Des de 2015</h3>
+                <p>Vam néixer a Barcelona amb el somni de recuperar els titelles nadalencs. Avui som referents en teatre infantil de qualitat.</p>
             </div>
-            <div class="equip-card">
-                <i class="fas fa-graduation-cap" style="font-size: 3rem; color: #446C8A; margin-bottom: 1rem;"></i>
-                <h4>Estudiant universitari</h4>
-                <p>18-25 anys, reduir ansietat acadèmica, socialitzar</p>
+            <div class="card-mini">
+                <i class="fa-regular fa-lightbulb" style="font-size: 2rem; color: var(--coral-warm); margin-bottom: 16px; display: block;"></i>
+                <h3>Filosofia</h3>
+                <p>Educar emocionant. Creiem que el teatre de titelles és una finestra a la imaginació i l'aprenentatge més pur.</p>
             </div>
-            <div class="equip-card">
-                <i class="fas fa-paint-brush" style="font-size: 3rem; color: #446C8A; margin-bottom: 1rem;"></i>
-                <h4>Persona creativa emergent</h4>
-                <p>25-45 anys, explorar creativitat sense judicis</p>
+            <div class="card-mini">
+                <i class="fa-regular fa-users" style="font-size: 2rem; color: var(--mustard-light); margin-bottom: 16px; display: block;"></i>
+                <h3>Equip creatiu</h3>
+                <p>Titellaires, dissenyadors i narradors. Tots units per l'amor als titelles i el somriure dels nens.</p>
             </div>
         </div>
     </section>
 
-    <!-- RSC I DAFO -->
-    <section id="rsc-dafo" class="section-hidden">
-        <h2>1.3 Responsabilitat Social Corporativa</h2>
+    <!-- CONTES NADALENCS (tres cards clàssics) -->
+    <section id="contes" class="section">
+        <h2 class="section-title">Contes nadalencs màgics</h2>
+        <div class="cards-grid">
+            <div class="card-mini story-trigger" data-story="cascanueces">
+                <div class="card-icon"><i class="fa-regular fa-gem"></i></div>
+                <h3>El Trencanous</h3>
+                <p>Clara i el seu estimat trencanous viatgen al regne dels dolços. Titelles ballarins i música en directe.</p>
+                <div class="tag-edat">🎯 3-10 anys · 50 min</div>
+            </div>
+            <div class="card-mini story-trigger" data-story="krampus">
+                <div class="card-icon"><i class="fa-regular fa-snowflake"></i></div>
+                <h3>Krampus i la llum</h3>
+                <p>Tradició alpina amb un missatge d'esperança. Un titella gegant i efectes d'ombra.</p>
+                <div class="tag-edat">🎯 5-12 anys · 40 min</div>
+            </div>
+            <div class="card-mini story-trigger" data-story="dickens">
+                <div class="card-icon"><i class="fa-regular fa-clock"></i></div>
+                <h3>Conte de Nadal</h3>
+                <p>L'Scrooge reviu gràcies a tres esperits. Titelles d'ombra i una història de transformació.</p>
+                <div class="tag-edat">🎯 4-12 anys · 55 min</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESPECTACLES (detallats) -->
+    <section id="espectacles" class="section">
+        <h2 class="section-title">Els nostres espectacles</h2>
+        <div class="cards-grid">
+            <div class="card-mini">
+                <i class="fa-regular fa-music" style="font-size: 2rem;"></i>
+                <h3>🎭 El Trencanous</h3>
+                <p><strong>Valors:</strong> Valentia, amistat, màgia.<br>Espectacle amb titelles articulats, neu artificial i il·luminació acollidora.</p>
+                <div class="tag-edat">Recomanat per infantil i primària</div>
+            </div>
+            <div class="card-mini">
+                <i class="fa-regular fa-tree" style="font-size: 2rem;"></i>
+                <h3>🎄 Krampus</h3>
+                <p><strong>Missatge:</strong> Responsabilitat i segones oportunitats. Atmosfera divertida i interacció amb el públic.</p>
+                <div class="tag-edat">A partir de 6 anys</div>
+            </div>
+            <div class="card-mini">
+                <i class="fa-regular fa-ghost"></i>
+                <h3>📖 Conte de Nadal</h3>
+                <p><strong>Valors:</strong> Empatia, generositat, canvi personal. Tres titelles d'Scrooge i ombres xineses.</p>
+                <div class="tag-edat">Família i escola</div>
+            </div>
+        </div>
+        <div style="margin-top: 40px; text-align: center; background: #fff0e6; border-radius: 48px; padding: 24px;">
+            <i class="fa-regular fa-calendar-circle-plus"></i> <strong>Calendari de funcions:</strong> Consulta disponibilitat per a Nadal. Escriu-nos i t'oferim opcions.
+        </div>
+    </section>
+
+    <!-- CONTACTE -->
+    <section id="contacte" class="section">
+        <h2 class="section-title">Contacta amb ANDOR</h2>
+        <div class="form-modern">
+            <div class="form-group">
+                <label><i class="fa-regular fa-user"></i> Nom complet *</label>
+                <input type="text" id="nom" placeholder="Anna Garcia">
+            </div>
+            <div class="form-group">
+                <label><i class="fa-regular fa-envelope"></i> Correu electrònic *</label>
+                <input type="email" id="email" placeholder="info@exemple.cat">
+            </div>
+            <div class="form-group">
+                <label><i class="fa-regular fa-phone"></i> Telèfon</label>
+                <input type="tel" id="telefon" placeholder="93 123 45 67">
+            </div>
+            <div class="form-group">
+                <label><i class="fa-regular fa-calendar"></i> Tipus d'esdeveniment *</label>
+                <select id="tipus">
+                    <option value="">Selecciona</option>
+                    <option>Escola / Col·legi</option>
+                    <option>Teatre municipal</option>
+                    <option>Festa privada / Casal</option>
+                    <option>Centre cívic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-regular fa-mask"></i> Espectacle d'interès</label>
+                <select id="espectacleSelect">
+                    <option>El Trencanous</option>
+                    <option>Krampus</option>
+                    <option>Conte de Nadal</option>
+                    <option>Qualsevol / Aconsella'ns</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-regular fa-message"></i> Missatge *</label>
+                <textarea rows="4" id="missatge" placeholder="Explica'ns el projecte, dates previstes i públic aproximat..."></textarea>
+            </div>
+            <button class="btn-submit" id="enviarForm"><i class="fa-regular fa-paper-plane"></i> Enviar sol·licitud</button>
+        </div>
+    </section>
+</div>
+
+<!-- MODAL per a contes -->
+<div id="modalContes" class="modal-story">
+    <div class="modal-card">
+        <span class="close-modal">&times;</span>
+        <div id="modalStoryContent"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div style="font-size: 1.8rem; font-weight: 600; color: var(--teal-soft);">ANDOR</div>
+        <p style="margin-top: 10px;">teatre de titelles · màgia que emociona</p>
+        <div class="footer-info">
+            <span><i class="fa-regular fa-location-dot"></i> Barcelona · Actuem a tot Catalunya</span>
+            <span><i class="fa-regular fa-envelope"></i> hola@andortitelles.cat</span>
+            <span><i class="fa-regular fa-phone"></i> +34 654 32 11 22</span>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 28px; color: #6f6f64;">© 2025 ANDOR · Titelles nadalencs amb cor d'infant</p>
+    </div>
+</footer>
+
+<script>
+    // Navegació entre seccions
+    const sections = ['inici', 'sobre', 'contes', 'espectacles', 'contacte'];
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    function showSection(sectionId) {
+        sections.forEach(id => {
+            const sec = document.getElementById(id);
+            if(sec) sec.classList.remove('active');
+        });
+        const activeSec = document.getElementById(sectionId);
+        if(activeSec) activeSec.classList.add('active');
         
-        <div class="rsc-grid">
-            <div class="rsc-card">
-                <div class="rsc-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                <h4>Àmbit Social</h4>
-                <p>Tallers gratuïts mensuals per a col·lectius vulnerables<br>Conveni universitats (15€/sessió)<br>Col·laboració centres salut mental</p>
-            </div>
-            <div class="rsc-card">
-                <div class="rsc-icon"><i class="fas fa-hand-holding-usd"></i></div>
-                <h4>Àmbit Econòmic</h4>
-                <p>Contractació local<br>Compra a proveïdors de proximitat<br>Preus assequibles (20-22€)</p>
-            </div>
-            <div class="rsc-card">
-                <div class="rsc-icon"><i class="fas fa-leaf"></i></div>
-                <h4>Àmbit Mediambiental</h4>
-                <p>Materials ecològics<br>Gestió de residus i reciclatge<br>Il·luminació LED<br>Acord amb Bicing</p>
-            </div>
-        </div>
-
-        <h2 style="margin-top: 3rem;">1.4 Anàlisi DAFO</h2>
-        
-        <div class="dafo-grid">
-            <div class="dafo-box fortaleses">
-                <h4><i class="fas fa-plus-circle" style="color: #27AE60;"></i> Fortaleses</h4>
-                <ul>
-                    <li>Equip amb formació en administració i finances</li>
-                    <li>Proposta de valor diferenciada (art + benestar)</li>
-                    <li>Coneixement TIC i màrqueting digital</li>
-                    <li>Motivació i cohesió d'equip</li>
-                    <li>Flexibilitat i adaptabilitat</li>
-                </ul>
-            </div>
-            <div class="dafo-box debilitats">
-                <h4><i class="fas fa-minus-circle" style="color: #E74C3C;"></i> Debilitats</h4>
-                <ul>
-                    <li>Experiència empresarial pràctica limitada</li>
-                    <li>Recursos financers inicials reduïts</li>
-                    <li>Marca desconeguda</li>
-                    <li>Capacitat de negociació limitada</li>
-                    <li>Dependència inicial de monitors externs</li>
-                </ul>
-            </div>
-            <div class="dafo-box oportunitats">
-                <h4><i class="fas fa-sun" style="color: #3498DB;"></i> Oportunitats</h4>
-                <ul>
-                    <li>Creixement demanda benestar emocional</li>
-                    <li>Ajuts i subvencions per a joves emprenedors</li>
-                    <li>Nínxol "art+relaxació" no explotat</li>
-                    <li>Alta densitat població a l'Eixample</li>
-                    <li>Col·laboracions potencials</li>
-                </ul>
-            </div>
-            <div class="dafo-box amenaces">
-                <h4><i class="fas fa-cloud" style="color: #F39C12;"></i> Amenaces</h4>
-                <ul>
-                    <li>Competència directa creixent</li>
-                    <li>Inestabilitat econòmica (pujada lloguers)</li>
-                    <li>Productes substitutius (ioga, meditació)</li>
-                    <li>Barreres d'entrada baixes</li>
-                    <li>Estacionalitat</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- LOCALITZACIÓ -->
-    <section id="localitzacio" class="section-hidden">
-        <h2>1.5 Localització de l'Empresa</h2>
-        <p style="text-align: center; margin-bottom: 2rem;">Carrer del Consell de Cent, 345, baixos · 08009 Barcelona</p>
-
-        <div class="mapa-localitzacio">
-            <iframe class="mapa-frame" 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.2098281800914!2d2.161301376033882!3d41.39238567129701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f5c90b40cb%3A0x7107c7b5c7c5c7c5!2sPasseig%20de%20Gr%C3%A0cia%2C%2085%2C%2008008%20Barcelona!5e0!3m2!1sca!2ses!4v1705704567890!5m2!1sca!2ses">
-            </iframe>
-            
-            <div class="detalls-local">
-                <h4>Justificació de la ubicació</h4>
-                <p><i class="fas fa-check-circle" style="color: #27AE60;"></i> Proximitat a clients: zona alta densitat professionals</p>
-                <p><i class="fas fa-check-circle" style="color: #27AE60;"></i> Accessibilitat: metro Passeig de Gràcia (5 min), bus, Bicing</p>
-                <p><i class="fas fa-check-circle" style="color: #27AE60;"></i> Visibilitat: carrer comercial amb aparador</p>
-                <p><i class="fas fa-exclamation-triangle" style="color: #F39C12;"></i> Inconvenient: aparcament difícil (foment transport públic)</p>
-                
-                <h4 style="margin-top: 1.5rem;">Característiques del local</h4>
-                <p><strong>Superfície:</strong> 75 m²</p>
-                <p><strong>Distribució:</strong> Sala tallers (50m²), magatzem (10m²), recepció (8m²), lavabo (4m²), office (3m²)</p>
-                <p><strong>Règim:</strong> Lloguer · 1.387,50€/mes (18,50€/m²)</p>
-                
-                <div class="croquis-local" style="margin-top: 1.5rem;">
-                    <pre>
-┌─────────────────────┐
-│      RECEPCIÓ       │
-├─────────────────────┤
-│                     │
-│  SALA TALLERS (50m²)│
-│                     │
-├─────────┬────┬──────┤
-│MAGATZEM │OFF.│ LAV. │
-│ (10m²)  │(3) │ (4)  │
-└─────────┴────┴──────┘
-                    </pre>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TALLERS -->
-    <section id="tallers" class="section-hidden">
-        <h2>Els Nostres Tallers</h2>
-        <p style="text-align: center; margin-bottom: 2rem;">Experiències creatives per al benestar emocional</p>
-        
-        <div class="tallers-grid">
-            <div class="taller-card">
-                <img src="https://images.pexels.com/photos/7859176/pexels-photo-7859176.jpeg" alt="Pintura" class="taller-img">
-                <h3>Pintura i Aquarella</h3>
-                <p>Deixa fluir la creativitat en un ambient relaxant. Materials inclosos.</p>
-                <p>Durada: 2h | 20€</p>
-            </div>
-            <div class="taller-card">
-                <img src="https://images.pexels.com/photos/9736906/pexels-photo-9736906.jpeg" alt="Ceràmica" class="taller-img">
-                <h3>Ceràmica i Modelatge</h3>
-                <p>Treballa amb argila i crea peces úniques. Activitat terapèutica.</p>
-                <p>Durada: 2.5h | 25€</p>
-            </div>
-            <div class="taller-card">
-                <img src="https://images.pexels.com/photos/7508794/pexels-photo-7508794.jpeg" alt="Manualitats" class="taller-img">
-                <h3>Manualitats i Collage</h3>
-                <p>Allibera l'estrès creant composicions artístiques.</p>
-                <p>Durada: 1.5h | 18€</p>
-            </div>
-            <div class="taller-card">
-                <img src="https://images.pexels.com/photos/8378728/pexels-photo-8378728.jpeg" alt="Art-teràpia" class="taller-img">
-                <h3>Art-teràpia</h3>
-                <p>Combinació d'expressió artística i tècniques de relaxació.</p>
-                <p>Durada: 2h | 22€</p>
-            </div>
-        </div>
-
-        <div class="qr-section">
-            <h3>Identitat Digital i QR</h3>
-            <p>Doble estratègia de codis QR per a connectar espai físic i digital</p>
-            <div class="qr-container">
-                <div class="qr-code">
-                    <img src="https://i.ibb.co/p6KQhShK/qr-crea-i-relaxa.png" alt="QR Web">
-                </div>
-                <p><strong>QR Principal:</strong> Accés a web, tallers, inscripcions</p>
-                <div class="qr-code" style="margin-top: 1rem;">
-                    <img src="https://i.ibb.co/p6KQhShK/qr-crea-i-relaxa.png" alt="QR Logotip">
-                </div>
-                <p><strong>QR Logotip:</strong> Descarrega la imatge corporativa</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- NOSALTRES / EQUIP -->
-    <section id="nosaltres" class="section-hidden">
-        <h2>L'Equip Promotor</h2>
-        <p style="text-align: center; margin-bottom: 2rem;">Estudiants de Grau Superior en Administració i Finances (Gestió d'Assegurances)</p>
-
-        <div class="equip-grid">
-            <div class="equip-card">
-                <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Ever Cárdenas" class="equip-img">
-                <h3>Ever Cárdenas</h3>
-                <p>Fundador</p>
-                <p style="font-size: 0.9rem; color: #7F8C8D;">Anàlisi financer, organització, resolució de problemes</p>
-                <p><i class="fas fa-phone"></i> 607 48 45 14</p>
-            </div>
-            <div class="equip-card">
-                <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="Sara Calvo" class="equip-img">
-                <h3>Sara Calvo</h3>
-                <p>Fundadora</p>
-                <p style="font-size: 0.9rem; color: #7F8C8D;">Gestió administrativa, RRHH, sector assegurador</p>
-                <p><i class="fas fa-phone"></i> 618 326 032</p>
-            </div>
-            <div class="equip-card">
-                <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Jocelyne Rodríguez" class="equip-img">
-                <h3>Jocelyne Rodríguez</h3>
-                <p>Fundadora</p>
-                <p style="font-size: 0.9rem; color: #7F8C8D;">Anàlisi econòmic, planificació, comunicació</p>
-                <p><i class="fas fa-phone"></i> 622 36 46 15</p>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <h4>Motivacions emprenedores</h4>
-            <p>Oportunitat de negoci en benestar emocional · Passió per l'art · Autorealització i independència</p>
-            <h4 style="margin-top: 1rem;">Barreres</h4>
-            <p>Experiència limitada en gestió pràctica · Recursos econòmics inicials reduïts</p>
-            <p><strong>Solucions:</strong> Assessorament gratuït, subvencions joves emprenedors, creixement gradual</p>
-        </div>
-
-        <div class="mission-vision-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-            <div class="mission-box" style="background: white; padding: 2rem; border-radius: 8px;">
-                <h4><i class="fas fa-bullseye" style="color: #446C8A;"></i> Missió</h4>
-                <p>Oferir espais creatius accessibles que, a través de l'art, ajudin les persones a relaxar-se, expressar-se i millorar el seu benestar emocional.</p>
-            </div>
-            <div class="vision-box" style="background: white; padding: 2rem; border-radius: 8px;">
-                <h4><i class="fas fa-rocket" style="color: #446C8A;"></i> Visió</h4>
-                <p>Convertir-nos en referent local de Barcelona en experiències de lleure enriquidores i expandir-nos de manera sostenible.</p>
-            </div>
-        </div>
-
-        <div class="values-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-            <div class="value-item"><i class="fas fa-palette"></i> Creativitat lliure</div>
-            <div class="value-item"><i class="fas fa-brain"></i> Benestar emocional</div>
-            <div class="value-item"><i class="fas fa-equals"></i> Inclusió</div>
-            <div class="value-item"><i class="fas fa-chart-line"></i> Professionalitat</div>
-            <div class="value-item"><i class="fas fa-heart"></i> Proximitat</div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div>
-                <img src="https://i.ibb.co/Y42PwSSd/logo-crea-i-relaxa.png" alt="Crea i Relaxa" class="footer-logo">
-                <p>Pla d'Empresa · Curs 2025/2026</p>
-                <p>Promotors: Ever Cárdenas · Sara Calvo · Jocelyne Rodríguez</p>
-            </div>
-            <div>
-                <h4>Enllaços</h4>
-                <ul style="list-style: none;">
-                    <li><a href="#" onclick="showSection('inici')" style="color: #ECF0F1;">Inici</a></li>
-                    <li><a href="#" onclick="showSection('macroentorn')" style="color: #ECF0F1;">Macroentorn</a></li>
-                    <li><a href="#" onclick="showSection('microentorn')" style="color: #ECF0F1;">Microentorn</a></li>
-                    <li><a href="#" onclick="showSection('rsc-dafo')" style="color: #ECF0F1;">RSC i DAFO</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Contacte</h4>
-                <p><i class="fas fa-map-marker-alt"></i> Passeig de Gràcia, 85 · Barcelona</p>
-                <p><i class="fas fa-envelope"></i> info@creairelaxa.cat</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-        <div style="margin-top: 2rem; border-top: 1px solid #34495E; padding-top: 2rem;">
-            <p>© 2026 Crea i Relaxa · Projecte Acadèmic · Grau Superior en Administració i Finances</p>
-        </div>
-    </footer>
-
-    <script>
-        function showSection(sectionName) {
-            const sections = ['inici', 'macroentorn', 'microentorn', 'rsc-dafo', 'localitzacio', 'tallers', 'nosaltres'];
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            sections.forEach(section => {
-                const element = document.getElementById(section);
-                if (element) {
-                    if (section === sectionName) {
-                        element.classList.remove('section-hidden');
-                    } else {
-                        element.classList.add('section-hidden');
-                    }
-                }
-            });
-            
-            navLinks.forEach(link => {
-                if (link.getAttribute('onclick')?.includes(sectionName)) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 80) {
-                header.style.background = '#ffffff';
-                header.style.boxShadow = '0 4px 20px rgba(44, 62, 80, 0.1)';
-            } else {
-                header.style.background = '#ffffff';
-                header.style.boxShadow = '0 2px 15px rgba(44, 62, 80, 0.08)';
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('data-section') === sectionId) {
+                link.classList.add('active');
             }
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            showSection('inici');
+    }
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = link.getAttribute('data-section');
+            if(target) {
+                showSection(target);
+                window.scrollTo({ top: document.querySelector('.hero-mini').offsetHeight - 50, behavior: 'smooth' });
+            }
         });
-    </script>
+    });
+    
+    // Dades dels contes (minimalista però informatiu)
+    const storiesData = {
+        cascanueces: `
+            <h2 style="color: #2b8c7c;">🎠 El Trencanous</h2>
+            <p style="margin: 16px 0; line-height: 1.5">La nit de Nadal, la Clara rep un trencanous de fusta. Quan el rellotge toca les dotze, el titella cobra vida i l’aventura comença al Regne dels Dolços. Titelles ballarins, llum daurada i un final ple de màgia.</p>
+            <div style="background: #FEF3E6; border-radius: 24px; padding: 18px; margin: 18px 0;">
+                <strong>🎯 Durada:</strong> 50 minuts · <strong>Edat:</strong> 3-10 anys<br>
+                <strong>✨ Valors:</strong> valentia, amistat, poder de la imaginació.
+            </div>
+            <p><i class="fa-regular fa-music"></i> Música en directe i titelles amb moviments de ballet.</p>
+        `,
+        krampus: `
+            <h2 style="color: #2b8c7c;">🌲 Krampus i la llum</h2>
+            <p>Inspirat en la llegenda alpina, però amb un gir positiu: Krampus no ve a espantar, sinó a recordar als nens que sempre hi ha temps per ser millors. Un espectacle divertit, amb titella gegant i llum dramàtica.</p>
+            <div style="background: #FEF3E6; border-radius: 24px; padding: 18px; margin: 18px 0;">
+                🕒 40 minuts · edat 5-12 anys<br>
+                🧡 Responsabilitat, empatia i segones oportunitats.
+            </div>
+            <p><i class="fa-regular fa-star"></i> Interacció amb el públic i efectes de neu màgica.</p>
+        `,
+        dickens: `
+            <h2 style="color: #2b8c7c;">📖 Conte de Nadal (Dickens)</h2>
+            <p>L’obra clàssica de Charles Dickens amb titelles d’ombra i marionetes. L'avar Scrooge canvia el seu cor després de la visita de tres esperits. Un espectacle emocionant que parla de generositat i transformació.</p>
+            <div style="background: #FEF3E6; border-radius: 24px; padding: 18px; margin: 18px 0;">
+                🎭 55 min · per a famílies i escoles (4-12 anys)<br>
+                🌟 Generositat, esperit nadalenc, canvi interior.
+            </div>
+            <p>Escenografia victoriana i titelles que mostren l’evolució del personatge.</p>
+        `
+    };
+    
+    // Obrir modal amb contes
+    const modal = document.getElementById('modalContes');
+    const modalContentDiv = document.getElementById('modalStoryContent');
+    const closeModalBtn = document.querySelector('.close-modal');
+    
+    document.querySelectorAll('.story-trigger').forEach(card => {
+        card.addEventListener('click', (e) => {
+            const storyKey = card.getAttribute('data-story');
+            if(storiesData[storyKey]) {
+                modalContentDiv.innerHTML = storiesData[storyKey];
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    function closeModalFunc() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    closeModalBtn.addEventListener('click', closeModalFunc);
+    window.addEventListener('click', (e) => {
+        if(e.target === modal) closeModalFunc();
+    });
+    
+    // Formulari simple amb validació i alerta animada
+    const btnSend = document.getElementById('enviarForm');
+    btnSend.addEventListener('click', () => {
+        const nom = document.getElementById('nom').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const tipus = document.getElementById('tipus').value;
+        const missatge = document.getElementById('missatge').value.trim();
+        
+        if(!nom || !email || !tipus || !missatge) {
+            alert("💬 Si us plau, omple els camps obligatoris: nom, email, tipus d'esdeveniment i missatge.");
+            return;
+        }
+        if(!email.includes('@')) {
+            alert("📧 Introdueix un correu electrònic vàlid.");
+            return;
+        }
+        alert(`✨ Gràcies ${nom}! Hem rebut la teva sol·licitud. En breu ens posarem en contacte per organitzar la màgia dels titelles. ✨`);
+        // netejar lleugerament
+        document.getElementById('nom').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('telefon').value = '';
+        document.getElementById('tipus').value = '';
+        document.getElementById('missatge').value = '';
+        document.getElementById('espectacleSelect').selectedIndex = 0;
+    });
+    
+    // assegurar secció inicial visible
+    showSection('inici');
+</script>
 </body>
 </html>
 
