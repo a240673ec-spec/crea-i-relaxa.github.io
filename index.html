@@ -20,17 +20,15 @@
             line-height: 1.5;
         }
 
-        /* Importar fuente Inter */
         @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
 
-        /* Contenedor general */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Header minimalista */
+        /* Header */
         header {
             background: #ffffff;
             padding: 1.2rem 0;
@@ -85,10 +83,9 @@
             padding: 0.4rem 0.9rem;
             border-radius: 40px;
             font-size: 0.85rem;
-            font-weight: 500;
         }
 
-        /* Hero minimalista */
+        /* Hero */
         .hero {
             padding: 4rem 0 3rem;
             text-align: center;
@@ -126,23 +123,17 @@
             cursor: pointer;
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid #0a2540;
-            color: #0a2540;
-        }
-
-        .btn-outline:hover {
-            background: #0a2540;
-            color: white;
-        }
-
         .btn:hover {
             background: #1f4a6e;
             transform: translateY(-2px);
         }
 
-        /* Sección productos (grid minimalista) */
+        .btn-sm {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        /* Sección productos */
         .section {
             padding: 4rem 0;
             border-bottom: 1px solid #eef2f6;
@@ -202,12 +193,7 @@
             margin-bottom: 1.2rem;
         }
 
-        .btn-sm {
-            padding: 0.5rem 1.2rem;
-            font-size: 0.85rem;
-        }
-
-        /* Ventajas minimalistas */
+        /* Ventajas */
         .advantages-grid {
             display: flex;
             flex-wrap: wrap;
@@ -227,19 +213,44 @@
             margin-bottom: 0.4rem;
         }
 
-        .advantage-item p {
-            color: #5a6e8a;
-            font-size: 0.9rem;
+        /* Modal (ventana flotante) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Formulario reclamaciones minimalista */
-        .claim-card {
-            max-width: 680px;
-            margin: 0 auto;
-            background: #f9fbfd;
+        .modal-content {
+            background: white;
             border-radius: 32px;
+            max-width: 550px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
             padding: 2rem;
-            border: 1px solid #e9eef3;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #888;
         }
 
         .form-group {
@@ -254,32 +265,59 @@
             color: #2d3a4b;
         }
 
-        input, select, textarea {
+        input, select {
             width: 100%;
             padding: 0.9rem 1rem;
             border: 1px solid #dce3ec;
             border-radius: 20px;
             font-family: inherit;
             font-size: 0.9rem;
-            background: white;
-            transition: 0.2s;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus, select:focus {
             outline: none;
             border-color: #2b7a4b;
-            box-shadow: 0 0 0 3px rgba(43,122,75,0.1);
         }
 
-        /* Pagos y footer */
-        .payments {
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .step-indicator {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin: 2rem 0 1rem;
-            font-size: 1.8rem;
-            color: #4a5568;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eef2f6;
+            padding-bottom: 1rem;
+        }
+
+        .step-indicator span {
+            flex: 1;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .step-indicator span.active {
+            color: #2b7a4b;
+            font-weight: 600;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .resumen-poliza {
+            background: #f0fdf4;
+            padding: 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
         }
 
         footer {
@@ -288,13 +326,6 @@
             text-align: center;
             color: #5a6e8a;
             font-size: 0.85rem;
-            border-top: 1px solid #eef2f6;
-        }
-
-        .footer-links a {
-            color: #2b7a4b;
-            text-decoration: none;
-            margin: 0 1rem;
         }
 
         @media (max-width: 768px) {
@@ -308,9 +339,6 @@
             }
             .hero h1 {
                 font-size: 2rem;
-            }
-            .container {
-                padding: 0 1.2rem;
             }
         }
     </style>
@@ -337,157 +365,286 @@
 
 <main>
     <div class="container">
-        <!-- Hero moderno -->
         <div class="hero">
             <h1>Seguros digitales, <br>sin complicaciones</h1>
-            <p>Contrata, gestiona y protege lo que más quieres en minutos. Con la máxima seguridad y transparencia.</p>
+            <p>Contrata, gestiona y protege lo que más quieres en minutos. Con la máxima seguridad.</p>
             <a href="#productos" class="btn"><i class="fas fa-arrow-right"></i> Cotizar ahora</a>
         </div>
 
-        <!-- Productos -->
         <div id="productos" class="section">
             <h2 class="section-title">Nuestros seguros</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-icon"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Salud</h3>
-                    <p>Acceso a clínicas privadas, reembolsos y telemedicina.</p>
-                    <div class="price">35€/mes</div>
-                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon"><i class="fas fa-car"></i></div>
-                    <h3>Auto</h3>
-                    <p>Cobertura total, asistencia en carretera y defensa legal.</p>
-                    <div class="price">28€/mes</div>
-                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon"><i class="fas fa-home"></i></div>
-                    <h3>Hogar</h3>
-                    <p>Protección frente a daños, robos e inundaciones.</p>
-                    <div class="price">22€/mes</div>
-                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon"><i class="fas fa-passport"></i></div>
-                    <h3>Viajes</h3>
-                    <p>Asistencia médica internacional y cancelación.</p>
-                    <div class="price">45€/viaje</div>
-                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>Dispositivos</h3>
-                    <p>Robo, rotura de pantalla y daños accidentales.</p>
-                    <div class="price">9€/mes</div>
-                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon"><i class="fas fa-building"></i></div>
-                    <h3>Empresas</h3>
-                    <p>Responsabilidad civil y ciberseguridad.</p>
-                    <div class="price">desde 59€/mes</div>
-                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
-                </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Los productos se generan con JS pero aquí están estáticos -->
             </div>
         </div>
 
-        <!-- Ventajas (minimalista) -->
         <div id="ventajas" class="section">
             <h2 class="section-title">Diseñado para ti</h2>
             <div class="advantages-grid">
-                <div class="advantage-item">
-                    <i class="fas fa-bolt"></i>
-                    <h4>Simplicidad</h4>
-                    <p>Contrata en 3 pasos, sin papeleos</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-eye"></i>
-                    <h4>Transparencia</h4>
-                    <p>Todo lo que pagas, claro y sin letra pequeña</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-clock"></i>
-                    <h4>24/7</h4>
-                    <p>Gestiona tu seguro desde cualquier lugar</p>
-                </div>
-                <div class="advantage-item">
-                    <i class="fas fa-lock"></i>
-                    <h4>Seguridad extrema</h4>
-                    <p>Cifrado AES-256 y firma digital</p>
-                </div>
+                <div class="advantage-item"><i class="fas fa-bolt"></i><h4>Simplicidad</h4><p>3 pasos, sin papeleos</p></div>
+                <div class="advantage-item"><i class="fas fa-eye"></i><h4>Transparencia</h4><p>Sin letra pequeña</p></div>
+                <div class="advantage-item"><i class="fas fa-clock"></i><h4>24/7</h4><p>Desde cualquier lugar</p></div>
+                <div class="advantage-item"><i class="fas fa-lock"></i><h4>Seguridad</h4><p>Cifrado AES-256</p></div>
             </div>
         </div>
 
-        <!-- Reclamaciones como fidelización -->
         <div id="reclamaciones" class="section">
-            <h2 class="section-title">Reclamaciones rápidas y justas</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem auto; color: #4a5568;">
-                Tu confianza es lo más importante. Resolvemos cualquier incidencia en menos de 72 horas.
-            </p>
-            <div class="claim-card">
-                <form>
-                    <div class="form-group">
-                        <label><i class="fas fa-file-alt"></i> Número de póliza</label>
-                        <input type="text" placeholder="Ej: POL-123456789">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-tag"></i> Tipo de reclamación</label>
-                        <select>
-                            <option>Siniestro</option>
-                            <option>Facturación</option>
-                            <option>Cobertura denegada</option>
-                            <option>Asistencia</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-pen"></i> Descripción</label>
-                        <textarea rows="3" placeholder="Cuéntanos qué ha pasado..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-paperclip"></i> Adjuntar documento</label>
-                        <input type="file" style="padding: 0.5rem 0;">
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Enviar reclamación</button>
-                </form>
-            </div>
-            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color:#5a6e8a;">
-                <i class="fas fa-check-circle"></i> Recibirás un número de seguimiento en tu email
-            </p>
-        </div>
-
-        <!-- Métodos de pago + criptografía -->
-        <div class="section" style="border-bottom: none;">
-            <h2 class="section-title">Pagos seguros y modernos</h2>
-            <div class="payments">
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-paypal"></i>
-                <i class="fas fa-university"></i>
-                <i class="fas fa-mobile-alt"></i>
-            </div>
-            <div style="text-align: center; margin-top: 1rem;">
-                <span style="background: #edf2f7; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem;">
-                    <i class="fas fa-lock"></i> Cifrado SSL · Clave asimétrica RSA · Firma digital
-                </span>
-            </div>
+            <h2 class="section-title">Reclamaciones rápidas</h2>
+            <p style="text-align:center; color:#4a5568;">Resolvemos incidencias en menos de 72 horas.</p>
         </div>
     </div>
 </main>
 
 <footer>
     <div class="container">
-        <p><i class="far fa-copyright"></i> 2025 Global Insurance – comerç electrònic internacional</p>
-        <div class="footer-links" style="margin: 0.8rem 0;">
-            <a href="#">Política de privacidad</a> • 
-            <a href="#">RGPD</a> • 
-            <a href="#">Certificados digitales</a>
-        </div>
-        <p><i class="fas fa-globe"></i> Available in English · Español · Français · Deutsch</p>
+        <p><i class="far fa-copyright"></i> 2025 Global Insurance – Comerç electrònic internacional</p>
+        <p><i class="fas fa-lock"></i> Cifrado SSL · Firma digital · Pago seguro</p>
     </div>
 </footer>
 
+<!-- MODAL PARA CONTRATAR -->
+<div id="contratarModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 style="margin-bottom: 1rem;"><i class="fas fa-file-signature"></i> Contratar seguro</h3>
+        
+        <div class="step-indicator">
+            <span id="step1Label" class="active">1. Datos personales</span>
+            <span id="step2Label">2. Datos bancarios</span>
+            <span id="step3Label">3. Confirmar póliza</span>
+        </div>
+
+        <!-- Paso 1 -->
+        <div id="step1" class="step active">
+            <div class="form-group">
+                <label>Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Ej: María García López">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" placeholder="maria@ejemplo.com">
+            </div>
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input type="tel" id="telefono" placeholder="+34 612 345 678">
+            </div>
+            <div class="form-group">
+                <label>Dirección</label>
+                <input type="text" id="direccion" placeholder="Calle, número, ciudad">
+            </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div id="step2" class="step">
+            <div class="form-group">
+                <label>Número de tarjeta</label>
+                <input type="text" id="tarjeta" placeholder="**** **** **** ****">
+            </div>
+            <div class="form-group">
+                <label>Fecha caducidad (MM/AA)</label>
+                <input type="text" id="caducidad" placeholder="12/28">
+            </div>
+            <div class="form-group">
+                <label>CVV</label>
+                <input type="password" id="cvv" placeholder="***">
+            </div>
+            <div class="form-group">
+                <label>Titular de la cuenta</label>
+                <input type="text" id="titular" placeholder="Mismo nombre que arriba">
+            </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div id="step3" class="step">
+            <div class="resumen-poliza" id="resumenPoliza">
+                <!-- Aquí se mostrará el resumen dinámico -->
+            </div>
+            <p><i class="fas fa-check-circle" style="color:#2b7a4b;"></i> Al confirmar, aceptas las condiciones de contratación y la suscripción digital.</p>
+        </div>
+
+        <div class="modal-buttons">
+            <button id="prevBtn" class="btn btn-sm" style="background:#ccc;" disabled><i class="fas fa-arrow-left"></i> Anterior</button>
+            <button id="nextBtn" class="btn btn-sm">Siguiente <i class="fas fa-arrow-right"></i></button>
+            <button id="confirmBtn" class="btn btn-sm" style="display:none; background:#2b7a4b;"><i class="fas fa-check"></i> Generar póliza</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Productos disponibles
+    const productos = [
+        { nombre: "Salud", precio: 35, icono: "fas fa-heartbeat", descripcion: "Acceso a clínicas privadas y telemedicina" },
+        { nombre: "Auto", precio: 28, icono: "fas fa-car", descripcion: "Cobertura total + asistencia en carretera" },
+        { nombre: "Hogar", precio: 22, icono: "fas fa-home", descripcion: "Protección frente a daños e inundaciones" },
+        { nombre: "Viajes", precio: 45, icono: "fas fa-passport", descripcion: "Asistencia médica internacional" },
+        { nombre: "Dispositivos", precio: 9, icono: "fas fa-mobile-alt", descripcion: "Robo y rotura de pantalla" },
+        { nombre: "Empresas", precio: 59, icono: "fas fa-building", descripcion: "Responsabilidad civil + ciberseguridad" }
+    ];
+
+    // Variable global para guardar el producto seleccionado
+    let productoSeleccionado = null;
+
+    // Generar tarjetas de productos
+    const productGrid = document.getElementById('productGrid');
+    productos.forEach(prod => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <div class="product-icon"><i class="${prod.icono}"></i></div>
+            <h3>${prod.nombre}</h3>
+            <p>${prod.descripcion}</p>
+            <div class="price">${prod.precio}€/mes</div>
+            <button class="btn btn-sm contratar-btn" data-nombre="${prod.nombre}" data-precio="${prod.precio}">Contratar <i class="fas fa-chevron-right"></i></button>
+        `;
+        productGrid.appendChild(card);
+    });
+
+    // Elementos del modal
+    const modal = document.getElementById('contratarModal');
+    const closeModal = document.querySelector('.close-modal');
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const step1Label = document.getElementById('step1Label');
+    const step2Label = document.getElementById('step2Label');
+    const step3Label = document.getElementById('step3Label');
+    const resumenPoliza = document.getElementById('resumenPoliza');
+
+    let currentStep = 1;
+
+    function updateSteps() {
+        step1.classList.remove('active');
+        step2.classList.remove('active');
+        step3.classList.remove('active');
+        step1Label.classList.remove('active');
+        step2Label.classList.remove('active');
+        step3Label.classList.remove('active');
+
+        if (currentStep === 1) {
+            step1.classList.add('active');
+            step1Label.classList.add('active');
+            prevBtn.disabled = true;
+            nextBtn.style.display = 'inline-flex';
+            confirmBtn.style.display = 'none';
+        } else if (currentStep === 2) {
+            step2.classList.add('active');
+            step2Label.classList.add('active');
+            prevBtn.disabled = false;
+            nextBtn.style.display = 'inline-flex';
+            confirmBtn.style.display = 'none';
+        } else if (currentStep === 3) {
+            step3.classList.add('active');
+            step3Label.classList.add('active');
+            prevBtn.disabled = false;
+            nextBtn.style.display = 'none';
+            confirmBtn.style.display = 'inline-flex';
+            // Actualizar resumen
+            const nombre = document.getElementById('nombre').value || "No especificado";
+            const email = document.getElementById('email').value || "No especificado";
+            const tarjeta = document.getElementById('tarjeta').value || "****";
+            const ultimosDigitos = tarjeta.slice(-4);
+            resumenPoliza.innerHTML = `
+                <strong><i class="fas fa-file-contract"></i> Resumen de tu póliza</strong><br>
+                📄 Producto: ${productoSeleccionado?.nombre || "No seleccionado"}<br>
+                💰 Prima mensual: ${productoSeleccionado?.precio || 0}€<br>
+                👤 Titular: ${nombre}<br>
+                📧 Email: ${email}<br>
+                💳 Método de pago: Tarjeta terminada en ${ultimosDigitos || "****"}<br>
+                <hr>
+                ✅ Póliza con cobertura inmediata. Número de póliza: POL-${Math.floor(Math.random()*1000000)}<br>
+                📅 Fecha de contratación: ${new Date().toLocaleDateString()}
+            `;
+        }
+    }
+
+    // Abrir modal y guardar producto
+    document.querySelectorAll('.contratar-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const nombreProd = btn.getAttribute('data-nombre');
+            const precioProd = parseFloat(btn.getAttribute('data-precio'));
+            productoSeleccionado = { nombre: nombreProd, precio: precioProd };
+            modal.style.display = 'flex';
+            currentStep = 1;
+            updateSteps();
+            // Limpiar campos del paso 3 para que se refresquen
+            document.getElementById('nombre').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('telefono').value = '';
+            document.getElementById('direccion').value = '';
+            document.getElementById('tarjeta').value = '';
+            document.getElementById('caducidad').value = '';
+            document.getElementById('cvv').value = '';
+            document.getElementById('titular').value = '';
+        });
+    });
+
+    // Re-asignar eventos a botones dinámicos (por si se cargan después)
+    function bindContratarButtons() {
+        document.querySelectorAll('.contratar-btn').forEach(btn => {
+            btn.removeEventListener('click', (e) => {});
+            btn.addEventListener('click', (e) => {
+                const nombreProd = btn.getAttribute('data-nombre');
+                const precioProd = parseFloat(btn.getAttribute('data-precio'));
+                productoSeleccionado = { nombre: nombreProd, precio: precioProd };
+                modal.style.display = 'flex';
+                currentStep = 1;
+                updateSteps();
+                document.getElementById('nombre').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('tarjeta').value = '';
+                document.getElementById('cvv').value = '';
+            });
+        });
+    }
+    bindContratarButtons();
+
+    // Cerrar modal
+    closeModal.onclick = () => modal.style.display = 'none';
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+
+    // Siguiente
+    nextBtn.onclick = () => {
+        if (currentStep === 1) {
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            if (!nombre || !email) {
+                alert("Por favor, completa nombre y email.");
+                return;
+            }
+            currentStep = 2;
+            updateSteps();
+        } else if (currentStep === 2) {
+            const tarjeta = document.getElementById('tarjeta').value;
+            const cvv = document.getElementById('cvv').value;
+            if (!tarjeta || tarjeta.length < 13 || !cvv) {
+                alert("Introduce los datos bancarios correctamente.");
+                return;
+            }
+            currentStep = 3;
+            updateSteps();
+        }
+    };
+
+    // Anterior
+    prevBtn.onclick = () => {
+        if (currentStep > 1) {
+            currentStep--;
+            updateSteps();
+        }
+    };
+
+    // Confirmar y generar póliza
+    confirmBtn.onclick = () => {
+        if (!productoSeleccionado) return;
+        alert(`✅ ¡PÓLIZA GENERADA CON ÉXITO!\n\nProducto: ${productoSeleccionado.nombre}\nPrima mensual: ${productoSeleccionado.precio}€\nHemos enviado los documentos de firma digital a ${document.getElementById('email').value || "tu email"}.\n\nNúmero de póliza: POL-${Math.floor(Math.random()*1000000)}`);
+        modal.style.display = 'none';
+        // Aquí se podría reiniciar el formulario
+        currentStep = 1;
+        updateSteps();
+    };
+</script>
 </body>
 </html>
-
