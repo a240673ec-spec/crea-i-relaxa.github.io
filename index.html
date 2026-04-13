@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Insurance | Seguros Digitales</title>
-    <!-- Font Awesome 6 (iconos modernos) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -28,7 +28,6 @@
             padding: 0 2rem;
         }
 
-        /* Header */
         header {
             background: #ffffff;
             padding: 1.2rem 0;
@@ -64,6 +63,7 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
 
         nav a {
@@ -83,9 +83,16 @@
             padding: 0.4rem 0.9rem;
             border-radius: 40px;
             font-size: 0.85rem;
+            cursor: pointer;
+            border: none;
+            font-weight: 500;
         }
 
-        /* Hero */
+        .lang-btn.active {
+            background: #0a2540;
+            color: white;
+        }
+
         .hero {
             padding: 4rem 0 3rem;
             text-align: center;
@@ -133,7 +140,6 @@
             font-size: 0.85rem;
         }
 
-        /* Sección productos */
         .section {
             padding: 4rem 0;
             border-bottom: 1px solid #eef2f6;
@@ -193,7 +199,6 @@
             margin-bottom: 1.2rem;
         }
 
-        /* Ventajas */
         .advantages-grid {
             display: flex;
             flex-wrap: wrap;
@@ -213,7 +218,6 @@
             margin-bottom: 0.4rem;
         }
 
-        /* Modal (ventana flotante) */
         .modal {
             display: none;
             position: fixed;
@@ -272,11 +276,6 @@
             border-radius: 20px;
             font-family: inherit;
             font-size: 0.9rem;
-        }
-
-        input:focus, select:focus {
-            outline: none;
-            border-color: #2b7a4b;
         }
 
         .step {
@@ -352,12 +351,13 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#ventajas">Ventajas</a></li>
-                <li><a href="#reclamaciones">Reclamaciones</a></li>
-                <li><a href="#">Mi área</a></li>
-                <li><a href="#" class="lang-btn"><i class="fas fa-globe"></i> EN</a></li>
+                <li><a href="#" data-key="nav_home">Inicio</a></li>
+                <li><a href="#productos" data-key="nav_products">Productos</a></li>
+                <li><a href="#ventajas" data-key="nav_advantages">Ventajas</a></li>
+                <li><a href="#reclamaciones" data-key="nav_claims">Reclamaciones</a></li>
+                <li><a href="#" data-key="nav_area">Mi área</a></li>
+                <li><button class="lang-btn" id="langEs">ES</button></li>
+                <li><button class="lang-btn" id="langEn">EN</button></li>
             </ul>
         </nav>
     </div>
@@ -366,140 +366,312 @@
 <main>
     <div class="container">
         <div class="hero">
-            <h1>Seguros digitales, <br>sin complicaciones</h1>
-            <p>Contrata, gestiona y protege lo que más quieres en minutos. Con la máxima seguridad.</p>
-            <a href="#productos" class="btn"><i class="fas fa-arrow-right"></i> Cotizar ahora</a>
+            <h1 data-key="hero_title">Seguros digitales, <br>sin complicaciones</h1>
+            <p data-key="hero_subtitle">Contrata, gestiona y protege lo que más quieres en minutos. Con la máxima seguridad.</p>
+            <a href="#productos" class="btn" data-key="hero_btn"><i class="fas fa-arrow-right"></i> Cotizar ahora</a>
         </div>
 
         <div id="productos" class="section">
-            <h2 class="section-title">Nuestros seguros</h2>
-            <div class="product-grid" id="productGrid">
-                <!-- Los productos se generan con JS pero aquí están estáticos -->
-            </div>
+            <h2 class="section-title" data-key="products_title">Nuestros seguros</h2>
+            <div class="product-grid" id="productGrid"></div>
         </div>
 
         <div id="ventajas" class="section">
-            <h2 class="section-title">Diseñado para ti</h2>
-            <div class="advantages-grid">
-                <div class="advantage-item"><i class="fas fa-bolt"></i><h4>Simplicidad</h4><p>3 pasos, sin papeleos</p></div>
-                <div class="advantage-item"><i class="fas fa-eye"></i><h4>Transparencia</h4><p>Sin letra pequeña</p></div>
-                <div class="advantage-item"><i class="fas fa-clock"></i><h4>24/7</h4><p>Desde cualquier lugar</p></div>
-                <div class="advantage-item"><i class="fas fa-lock"></i><h4>Seguridad</h4><p>Cifrado AES-256</p></div>
-            </div>
+            <h2 class="section-title" data-key="advantages_title">Diseñado para ti</h2>
+            <div class="advantages-grid" id="advantagesGrid"></div>
         </div>
 
         <div id="reclamaciones" class="section">
-            <h2 class="section-title">Reclamaciones rápidas</h2>
-            <p style="text-align:center; color:#4a5568;">Resolvemos incidencias en menos de 72 horas.</p>
+            <h2 class="section-title" data-key="claims_title">Reclamaciones rápidas</h2>
+            <p style="text-align:center; color:#4a5568;" data-key="claims_text">Resolvemos incidencias en menos de 72 horas.</p>
         </div>
     </div>
 </main>
 
 <footer>
     <div class="container">
-        <p><i class="far fa-copyright"></i> 2025 Global Insurance – Comerç electrònic internacional</p>
-        <p><i class="fas fa-lock"></i> Cifrado SSL · Firma digital · Pago seguro</p>
+        <p data-key="footer_copyright"><i class="far fa-copyright"></i> 2025 Global Insurance – Comerç electrònic internacional</p>
+        <p><i class="fas fa-lock"></i> <span data-key="footer_security">Cifrado SSL · Firma digital · Pago seguro</span></p>
     </div>
 </footer>
 
-<!-- MODAL PARA CONTRATAR -->
+<!-- MODAL -->
 <div id="contratarModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <h3 style="margin-bottom: 1rem;"><i class="fas fa-file-signature"></i> Contratar seguro</h3>
+        <h3 style="margin-bottom: 1rem;" data-key="modal_title"><i class="fas fa-file-signature"></i> Contratar seguro</h3>
         
         <div class="step-indicator">
-            <span id="step1Label" class="active">1. Datos personales</span>
-            <span id="step2Label">2. Datos bancarios</span>
-            <span id="step3Label">3. Confirmar póliza</span>
+            <span id="step1Label" class="active" data-key="step1">1. Datos personales</span>
+            <span id="step2Label" data-key="step2">2. Datos bancarios</span>
+            <span id="step3Label" data-key="step3">3. Confirmar póliza</span>
         </div>
 
-        <!-- Paso 1 -->
         <div id="step1" class="step active">
             <div class="form-group">
-                <label>Nombre completo</label>
+                <label data-key="label_name">Nombre completo</label>
                 <input type="text" id="nombre" placeholder="Ej: María García López">
             </div>
             <div class="form-group">
-                <label>Email</label>
+                <label data-key="label_email">Email</label>
                 <input type="email" id="email" placeholder="maria@ejemplo.com">
             </div>
             <div class="form-group">
-                <label>Teléfono</label>
+                <label data-key="label_phone">Teléfono</label>
                 <input type="tel" id="telefono" placeholder="+34 612 345 678">
             </div>
             <div class="form-group">
-                <label>Dirección</label>
+                <label data-key="label_address">Dirección</label>
                 <input type="text" id="direccion" placeholder="Calle, número, ciudad">
             </div>
         </div>
 
-        <!-- Paso 2 -->
         <div id="step2" class="step">
             <div class="form-group">
-                <label>Número de tarjeta</label>
+                <label data-key="label_card">Número de tarjeta</label>
                 <input type="text" id="tarjeta" placeholder="**** **** **** ****">
             </div>
             <div class="form-group">
-                <label>Fecha caducidad (MM/AA)</label>
+                <label data-key="label_expiry">Fecha caducidad (MM/AA)</label>
                 <input type="text" id="caducidad" placeholder="12/28">
             </div>
             <div class="form-group">
-                <label>CVV</label>
+                <label data-key="label_cvv">CVV</label>
                 <input type="password" id="cvv" placeholder="***">
             </div>
             <div class="form-group">
-                <label>Titular de la cuenta</label>
+                <label data-key="label_holder">Titular de la cuenta</label>
                 <input type="text" id="titular" placeholder="Mismo nombre que arriba">
             </div>
         </div>
 
-        <!-- Paso 3 -->
         <div id="step3" class="step">
-            <div class="resumen-poliza" id="resumenPoliza">
-                <!-- Aquí se mostrará el resumen dinámico -->
-            </div>
-            <p><i class="fas fa-check-circle" style="color:#2b7a4b;"></i> Al confirmar, aceptas las condiciones de contratación y la suscripción digital.</p>
+            <div class="resumen-poliza" id="resumenPoliza"></div>
+            <p data-key="confirm_terms"><i class="fas fa-check-circle" style="color:#2b7a4b;"></i> Al confirmar, aceptas las condiciones de contratación y la suscripción digital.</p>
         </div>
 
         <div class="modal-buttons">
-            <button id="prevBtn" class="btn btn-sm" style="background:#ccc;" disabled><i class="fas fa-arrow-left"></i> Anterior</button>
-            <button id="nextBtn" class="btn btn-sm">Siguiente <i class="fas fa-arrow-right"></i></button>
-            <button id="confirmBtn" class="btn btn-sm" style="display:none; background:#2b7a4b;"><i class="fas fa-check"></i> Generar póliza</button>
+            <button id="prevBtn" class="btn btn-sm" style="background:#ccc;" disabled data-key="prev_btn"><i class="fas fa-arrow-left"></i> Anterior</button>
+            <button id="nextBtn" class="btn btn-sm" data-key="next_btn">Siguiente <i class="fas fa-arrow-right"></i></button>
+            <button id="confirmBtn" class="btn btn-sm" style="display:none; background:#2b7a4b;" data-key="confirm_btn"><i class="fas fa-check"></i> Generar póliza</button>
         </div>
     </div>
 </div>
 
 <script>
-    // Productos disponibles
+    // ==================== DICCIONARIO DE TRADUCCIONES ====================
+    const translations = {
+        es: {
+            nav_home: "Inicio",
+            nav_products: "Productos",
+            nav_advantages: "Ventajas",
+            nav_claims: "Reclamaciones",
+            nav_area: "Mi área",
+            hero_title: "Seguros digitales, <br>sin complicaciones",
+            hero_subtitle: "Contrata, gestiona y protege lo que más quieres en minutos. Con la máxima seguridad.",
+            hero_btn: "Cotizar ahora",
+            products_title: "Nuestros seguros",
+            advantages_title: "Diseñado para ti",
+            claims_title: "Reclamaciones rápidas",
+            claims_text: "Resolvemos incidencias en menos de 72 horas.",
+            footer_copyright: "© 2025 Global Insurance – Comerç electrònic internacional",
+            footer_security: "Cifrado SSL · Firma digital · Pago seguro",
+            modal_title: "Contratar seguro",
+            step1: "1. Datos personales",
+            step2: "2. Datos bancarios",
+            step3: "3. Confirmar póliza",
+            label_name: "Nombre completo",
+            label_email: "Email",
+            label_phone: "Teléfono",
+            label_address: "Dirección",
+            label_card: "Número de tarjeta",
+            label_expiry: "Fecha caducidad (MM/AA)",
+            label_cvv: "CVV",
+            label_holder: "Titular de la cuenta",
+            confirm_terms: "Al confirmar, aceptas las condiciones de contratación y la suscripción digital.",
+            prev_btn: "Anterior",
+            next_btn: "Siguiente",
+            confirm_btn: "Generar póliza",
+            // productos
+            health: "Salud",
+            health_desc: "Acceso a clínicas privadas y telemedicina",
+            auto: "Auto",
+            auto_desc: "Cobertura total + asistencia en carretera",
+            hogar: "Hogar",
+            hogar_desc: "Protección frente a daños e inundaciones",
+            viajes: "Viajes",
+            viajes_desc: "Asistencia médica internacional",
+            dispositivos: "Dispositivos",
+            dispositivos_desc: "Robo y rotura de pantalla",
+            empresas: "Empresas",
+            empresas_desc: "Responsabilidad civil + ciberseguridad",
+            // ventajas
+            simplicity: "Simplicidad",
+            simplicity_desc: "3 pasos, sin papeleos",
+            transparency: "Transparencia",
+            transparency_desc: "Sin letra pequeña",
+            always_on: "24/7",
+            always_on_desc: "Desde cualquier lugar",
+            security: "Seguridad",
+            security_desc: "Cifrado AES-256",
+            // botón contratar
+            contract: "Contratar"
+        },
+        en: {
+            nav_home: "Home",
+            nav_products: "Products",
+            nav_advantages: "Advantages",
+            nav_claims: "Claims",
+            nav_area: "My area",
+            hero_title: "Digital Insurance, <br>no complications",
+            hero_subtitle: "Get, manage and protect what matters most in minutes. With maximum security.",
+            hero_btn: "Get a quote",
+            products_title: "Our insurances",
+            advantages_title: "Designed for you",
+            claims_title: "Fast claims",
+            claims_text: "We resolve issues in less than 72 hours.",
+            footer_copyright: "© 2025 Global Insurance – International e-commerce",
+            footer_security: "SSL Encryption · Digital Signature · Secure Payment",
+            modal_title: "Purchase insurance",
+            step1: "1. Personal data",
+            step2: "2. Payment details",
+            step3: "3. Confirm policy",
+            label_name: "Full name",
+            label_email: "Email",
+            label_phone: "Phone",
+            label_address: "Address",
+            label_card: "Card number",
+            label_expiry: "Expiry date (MM/YY)",
+            label_cvv: "CVV",
+            label_holder: "Account holder",
+            confirm_terms: "By confirming, you accept the terms and conditions and digital subscription.",
+            prev_btn: "Back",
+            next_btn: "Next",
+            confirm_btn: "Generate policy",
+            health: "Health",
+            health_desc: "Access to private clinics and telemedicine",
+            auto: "Auto",
+            auto_desc: "Full coverage + roadside assistance",
+            hogar: "Home",
+            hogar_desc: "Protection against damages and floods",
+            viajes: "Travel",
+            viajes_desc: "International medical assistance",
+            dispositivos: "Devices",
+            dispositivos_desc: "Theft and screen breakage",
+            empresas: "Business",
+            empresas_desc: "Civil liability + cybersecurity",
+            simplicity: "Simplicity",
+            simplicity_desc: "3 steps, no paperwork",
+            transparency: "Transparency",
+            transparency_desc: "No fine print",
+            always_on: "24/7",
+            always_on_desc: "From anywhere",
+            security: "Security",
+            security_desc: "AES-256 encryption",
+            contract: "Get insured"
+        }
+    };
+
+    let currentLang = 'es';
+
+    function translatePage() {
+        const elements = document.querySelectorAll('[data-key]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[currentLang][key]) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translations[currentLang][key];
+                } else {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            }
+        });
+        // Traducir productos dinámicos
+        renderProducts();
+        renderAdvantages();
+        // Actualizar botones activos
+        document.getElementById('langEs').classList.toggle('active', currentLang === 'es');
+        document.getElementById('langEn').classList.toggle('active', currentLang === 'en');
+    }
+
     const productos = [
-        { nombre: "Salud", precio: 35, icono: "fas fa-heartbeat", descripcion: "Acceso a clínicas privadas y telemedicina" },
-        { nombre: "Auto", precio: 28, icono: "fas fa-car", descripcion: "Cobertura total + asistencia en carretera" },
-        { nombre: "Hogar", precio: 22, icono: "fas fa-home", descripcion: "Protección frente a daños e inundaciones" },
-        { nombre: "Viajes", precio: 45, icono: "fas fa-passport", descripcion: "Asistencia médica internacional" },
-        { nombre: "Dispositivos", precio: 9, icono: "fas fa-mobile-alt", descripcion: "Robo y rotura de pantalla" },
-        { nombre: "Empresas", precio: 59, icono: "fas fa-building", descripcion: "Responsabilidad civil + ciberseguridad" }
+        { key: "health", precio: 35, icono: "fas fa-heartbeat" },
+        { key: "auto", precio: 28, icono: "fas fa-car" },
+        { key: "hogar", precio: 22, icono: "fas fa-home" },
+        { key: "viajes", precio: 45, icono: "fas fa-passport" },
+        { key: "dispositivos", precio: 9, icono: "fas fa-mobile-alt" },
+        { key: "empresas", precio: 59, icono: "fas fa-building" }
     ];
 
-    // Variable global para guardar el producto seleccionado
+    function renderProducts() {
+        const grid = document.getElementById('productGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        productos.forEach(prod => {
+            const nombre = translations[currentLang][prod.key];
+            const descripcion = translations[currentLang][`${prod.key}_desc`];
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="product-icon"><i class="${prod.icono}"></i></div>
+                <h3>${nombre}</h3>
+                <p>${descripcion}</p>
+                <div class="price">${prod.precio}€/mes</div>
+                <button class="btn btn-sm contratar-btn" data-nombre="${nombre}" data-precio="${prod.precio}">${translations[currentLang].contract} <i class="fas fa-chevron-right"></i></button>
+            `;
+            grid.appendChild(card);
+        });
+        bindContratarButtons();
+    }
+
+    function renderAdvantages() {
+        const grid = document.getElementById('advantagesGrid');
+        if (!grid) return;
+        const ventajas = [
+            { key: "simplicity", icon: "fas fa-bolt" },
+            { key: "transparency", icon: "fas fa-eye" },
+            { key: "always_on", icon: "fas fa-clock" },
+            { key: "security", icon: "fas fa-lock" }
+        ];
+        grid.innerHTML = '';
+        ventajas.forEach(v => {
+            const title = translations[currentLang][v.key];
+            const desc = translations[currentLang][`${v.key}_desc`];
+            const item = document.createElement('div');
+            item.className = 'advantage-item';
+            item.innerHTML = `<i class="${v.icon}"></i><h4>${title}</h4><p>${desc}</p>`;
+            grid.appendChild(item);
+        });
+    }
+
     let productoSeleccionado = null;
 
-    // Generar tarjetas de productos
-    const productGrid = document.getElementById('productGrid');
-    productos.forEach(prod => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <div class="product-icon"><i class="${prod.icono}"></i></div>
-            <h3>${prod.nombre}</h3>
-            <p>${prod.descripcion}</p>
-            <div class="price">${prod.precio}€/mes</div>
-            <button class="btn btn-sm contratar-btn" data-nombre="${prod.nombre}" data-precio="${prod.precio}">Contratar <i class="fas fa-chevron-right"></i></button>
-        `;
-        productGrid.appendChild(card);
-    });
+    function bindContratarButtons() {
+        document.querySelectorAll('.contratar-btn').forEach(btn => {
+            btn.removeEventListener('click', handleContratar);
+            btn.addEventListener('click', handleContratar);
+        });
+    }
 
-    // Elementos del modal
+    function handleContratar(e) {
+        const btn = e.currentTarget;
+        const nombreProd = btn.getAttribute('data-nombre');
+        const precioProd = parseFloat(btn.getAttribute('data-precio'));
+        productoSeleccionado = { nombre: nombreProd, precio: precioProd };
+        modal.style.display = 'flex';
+        currentStep = 1;
+        updateSteps();
+        document.getElementById('nombre').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('telefono').value = '';
+        document.getElementById('direccion').value = '';
+        document.getElementById('tarjeta').value = '';
+        document.getElementById('caducidad').value = '';
+        document.getElementById('cvv').value = '';
+        document.getElementById('titular').value = '';
+    }
+
+    // Modal logic
     const modal = document.getElementById('contratarModal');
     const closeModal = document.querySelector('.close-modal');
     const step1 = document.getElementById('step1');
@@ -512,7 +684,6 @@
     const step2Label = document.getElementById('step2Label');
     const step3Label = document.getElementById('step3Label');
     const resumenPoliza = document.getElementById('resumenPoliza');
-
     let currentStep = 1;
 
     function updateSteps() {
@@ -541,77 +712,38 @@
             prevBtn.disabled = false;
             nextBtn.style.display = 'none';
             confirmBtn.style.display = 'inline-flex';
-            // Actualizar resumen
             const nombre = document.getElementById('nombre').value || "No especificado";
             const email = document.getElementById('email').value || "No especificado";
             const tarjeta = document.getElementById('tarjeta').value || "****";
             const ultimosDigitos = tarjeta.slice(-4);
+            const productoNombre = productoSeleccionado?.nombre || "No seleccionado";
+            const productoPrecio = productoSeleccionado?.precio || 0;
+            const langText = currentLang === 'es' ? 'Resumen de tu póliza' : 'Policy summary';
+            const policyText = currentLang === 'es' ? 'Póliza con cobertura inmediata' : 'Immediate coverage policy';
+            const policyNumber = `POL-${Math.floor(Math.random()*1000000)}`;
             resumenPoliza.innerHTML = `
-                <strong><i class="fas fa-file-contract"></i> Resumen de tu póliza</strong><br>
-                📄 Producto: ${productoSeleccionado?.nombre || "No seleccionado"}<br>
-                💰 Prima mensual: ${productoSeleccionado?.precio || 0}€<br>
-                👤 Titular: ${nombre}<br>
+                <strong><i class="fas fa-file-contract"></i> ${langText}</strong><br>
+                📄 ${currentLang === 'es' ? 'Producto' : 'Product'}: ${productoNombre}<br>
+                💰 ${currentLang === 'es' ? 'Prima mensual' : 'Monthly premium'}: ${productoPrecio}€<br>
+                👤 ${currentLang === 'es' ? 'Titular' : 'Holder'}: ${nombre}<br>
                 📧 Email: ${email}<br>
-                💳 Método de pago: Tarjeta terminada en ${ultimosDigitos || "****"}<br>
+                💳 ${currentLang === 'es' ? 'Método de pago' : 'Payment method'}: ${currentLang === 'es' ? 'Tarjeta terminada en' : 'Card ending in'} ${ultimosDigitos || "****"}<br>
                 <hr>
-                ✅ Póliza con cobertura inmediata. Número de póliza: POL-${Math.floor(Math.random()*1000000)}<br>
-                📅 Fecha de contratación: ${new Date().toLocaleDateString()}
+                ✅ ${policyText}. ${currentLang === 'es' ? 'Número de póliza' : 'Policy number'}: ${policyNumber}<br>
+                📅 ${currentLang === 'es' ? 'Fecha de contratación' : 'Issue date'}: ${new Date().toLocaleDateString()}
             `;
         }
     }
 
-    // Abrir modal y guardar producto
-    document.querySelectorAll('.contratar-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const nombreProd = btn.getAttribute('data-nombre');
-            const precioProd = parseFloat(btn.getAttribute('data-precio'));
-            productoSeleccionado = { nombre: nombreProd, precio: precioProd };
-            modal.style.display = 'flex';
-            currentStep = 1;
-            updateSteps();
-            // Limpiar campos del paso 3 para que se refresquen
-            document.getElementById('nombre').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('telefono').value = '';
-            document.getElementById('direccion').value = '';
-            document.getElementById('tarjeta').value = '';
-            document.getElementById('caducidad').value = '';
-            document.getElementById('cvv').value = '';
-            document.getElementById('titular').value = '';
-        });
-    });
-
-    // Re-asignar eventos a botones dinámicos (por si se cargan después)
-    function bindContratarButtons() {
-        document.querySelectorAll('.contratar-btn').forEach(btn => {
-            btn.removeEventListener('click', (e) => {});
-            btn.addEventListener('click', (e) => {
-                const nombreProd = btn.getAttribute('data-nombre');
-                const precioProd = parseFloat(btn.getAttribute('data-precio'));
-                productoSeleccionado = { nombre: nombreProd, precio: precioProd };
-                modal.style.display = 'flex';
-                currentStep = 1;
-                updateSteps();
-                document.getElementById('nombre').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('tarjeta').value = '';
-                document.getElementById('cvv').value = '';
-            });
-        });
-    }
-    bindContratarButtons();
-
-    // Cerrar modal
     closeModal.onclick = () => modal.style.display = 'none';
     window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
 
-    // Siguiente
     nextBtn.onclick = () => {
         if (currentStep === 1) {
             const nombre = document.getElementById('nombre').value;
             const email = document.getElementById('email').value;
             if (!nombre || !email) {
-                alert("Por favor, completa nombre y email.");
+                alert(currentLang === 'es' ? "Completa nombre y email" : "Please fill name and email");
                 return;
             }
             currentStep = 2;
@@ -620,7 +752,7 @@
             const tarjeta = document.getElementById('tarjeta').value;
             const cvv = document.getElementById('cvv').value;
             if (!tarjeta || tarjeta.length < 13 || !cvv) {
-                alert("Introduce los datos bancarios correctamente.");
+                alert(currentLang === 'es' ? "Introduce los datos bancarios correctamente" : "Please enter valid payment details");
                 return;
             }
             currentStep = 3;
@@ -628,7 +760,6 @@
         }
     };
 
-    // Anterior
     prevBtn.onclick = () => {
         if (currentStep > 1) {
             currentStep--;
@@ -636,15 +767,30 @@
         }
     };
 
-    // Confirmar y generar póliza
     confirmBtn.onclick = () => {
         if (!productoSeleccionado) return;
-        alert(`✅ ¡PÓLIZA GENERADA CON ÉXITO!\n\nProducto: ${productoSeleccionado.nombre}\nPrima mensual: ${productoSeleccionado.precio}€\nHemos enviado los documentos de firma digital a ${document.getElementById('email').value || "tu email"}.\n\nNúmero de póliza: POL-${Math.floor(Math.random()*1000000)}`);
+        alert(currentLang === 'es' 
+            ? `✅ ¡PÓLIZA GENERADA CON ÉXITO!\n\nProducto: ${productoSeleccionado.nombre}\nPrima mensual: ${productoSeleccionado.precio}€\nHemos enviado los documentos de firma digital a ${document.getElementById('email').value || "tu email"}.\n\nNúmero de póliza: POL-${Math.floor(Math.random()*1000000)}`
+            : `✅ POLICY SUCCESSFULLY GENERATED!\n\nProduct: ${productoSeleccionado.nombre}\nMonthly premium: ${productoSeleccionado.precio}€\nWe have sent the digital signature documents to ${document.getElementById('email').value || "your email"}.\n\nPolicy number: POL-${Math.floor(Math.random()*1000000)}`);
         modal.style.display = 'none';
-        // Aquí se podría reiniciar el formulario
         currentStep = 1;
         updateSteps();
     };
+
+    // Language switcher
+    document.getElementById('langEs').addEventListener('click', () => {
+        currentLang = 'es';
+        translatePage();
+    });
+    document.getElementById('langEn').addEventListener('click', () => {
+        currentLang = 'en';
+        translatePage();
+    });
+
+    // Initial render
+    renderProducts();
+    renderAdvantages();
+    translatePage();
 </script>
 </body>
 </html>
