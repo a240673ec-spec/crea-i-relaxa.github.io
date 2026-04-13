@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>ANDOR · Teatre de Titelles Nadalencs | Màgia en cada fil</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Insurance | Seguros Digitales</title>
+    <!-- Font Awesome 6 (iconos modernos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -13,545 +13,481 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --azul-oscuro: #1F3A5F;
-            --azul-medio: #3E5F8A;
-            --azul-claro: #6F8FB3;
-            --blanco-roto: #F4F4F2;
-            --gris-claro: #D9D9D9;
-            --marron-principal: #8B5E3C;
-            --marron-oscuro: #5C3A21;
-            --dorado-claro: #D4A44B;
-            --dorado-oscuro: #A67C2E;
-            --rosa-piel: #E6A39A;
-            --rojo-suave: #C75B5B;
-        }
-
         body {
-            background: var(--blanco-roto);
-            color: var(--azul-oscuro);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a2e;
             line-height: 1.5;
-            scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
+        /* Importar fuente Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
 
+        /* Contenedor general */
         .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 32px;
+            padding: 0 2rem;
         }
 
+        /* Header minimalista */
         header {
-            background: var(--blanco-roto);
-            border-bottom: 3px solid var(--dorado-claro);
+            background: #ffffff;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #eef2f6;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(4px);
         }
-        .header-content {
+
+        .header-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 0;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 1rem;
         }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #0a2540;
         }
-        /* LOGO MÁS GRANDE */
-        .logo-real {
-            height: 90px;
-            width: auto;
-            display: block;
-            border-radius: 16px;
-            transition: transform 0.2s ease;
+
+        .logo i {
+            color: #2b7a4b;
+            margin-right: 6px;
         }
-        .logo-real:hover {
-            transform: scale(1.02);
-        }
-        .logo-text {
-            font-size: 2rem;
-            color: var(--marron-principal);
-            letter-spacing: -0.5px;
-        }
-        .logo-sub {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--azul-medio);
-            background: rgba(62,95,138,0.1);
-            padding: 4px 14px;
-            border-radius: 30px;
-            margin-top: 6px;
-        }
+
         nav ul {
             display: flex;
-            gap: 28px;
             list-style: none;
+            gap: 2rem;
         }
+
         nav a {
             text-decoration: none;
-            font-weight: 600;
-            color: var(--azul-oscuro);
-            padding: 8px 0;
-            border-bottom: 2px solid transparent;
-            transition: 0.2s;
-        }
-        nav a:hover, nav a.active {
-            border-bottom-color: var(--dorado-claro);
-            color: var(--marron-principal);
-        }
-
-        /* Logo enorme en la sección de inicio (hero) */
-        .hero-logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .hero-logo-img {
-            height: 160px;
-            width: auto;
-            border-radius: 24px;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .hero-logo-img:hover {
-            transform: scale(1.03);
-        }
-
-        .hero-andor {
-            background: linear-gradient(135deg, var(--blanco-roto) 0%, #EDE9E0 100%);
-            padding: 50px 20px 70px;
-            text-align: center;
-            border-bottom: 1px solid var(--dorado-claro);
-        }
-        .hero-andor h1 {
-            font-size: 3rem;
-            color: var(--azul-oscuro);
-            margin-top: 20px;
-        }
-        .hero-andor h1 span {
-            color: var(--marron-principal);
-            border-bottom: 3px solid var(--dorado-claro);
-        }
-        .btn-primary {
-            display: inline-block;
-            background: var(--marron-principal);
-            color: white;
-            padding: 12px 32px;
-            border-radius: 60px;
-            font-weight: 700;
-            margin-top: 24px;
-            transition: 0.2s;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(139,94,60,0.3);
-        }
-        .btn-primary:hover {
-            background: var(--marron-oscuro);
-            transform: translateY(-3px);
-        }
-
-        .section {
-            display: none;
-            padding: 70px 0;
-            animation: fadeSlide 0.5s ease;
-        }
-        .section.active {
-            display: block;
-        }
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(30px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .section-title {
-            font-size: 2.6rem;
-            text-align: center;
-            color: var(--azul-oscuro);
-            margin-bottom: 50px;
-            font-family: 'Playfair Display', serif;
-        }
-        .section-title i {
-            color: var(--dorado-claro);
-            margin-right: 12px;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 40px;
-        }
-        .card-cuento {
-            background: white;
-            border-radius: 36px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid var(--gris-claro);
-        }
-        .card-cuento:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 25px 35px -12px rgba(31,58,95,0.25);
-            border-color: var(--dorado-claro);
-        }
-        .cuento-img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-            border-bottom: 4px solid var(--dorado-claro);
-        }
-        .card-body {
-            padding: 28px 24px;
-        }
-        .sinopsis {
+            color: #1a1a2e;
+            font-weight: 500;
             font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 16px 0;
-            color: #4a5568;
+            transition: color 0.2s;
         }
-        .valors {
-            background: rgba(212, 164, 75, 0.12);
-            padding: 12px 16px;
-            border-radius: 28px;
-            margin: 16px 0;
+
+        nav a:hover {
+            color: #2b7a4b;
+        }
+
+        .lang-btn {
+            background: #f1f5f9;
+            padding: 0.4rem 0.9rem;
+            border-radius: 40px;
             font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--marron-oscuro);
+            font-weight: 500;
         }
-        .valors i {
-            color: var(--dorado-claro);
-            margin-right: 8px;
+
+        /* Hero minimalista */
+        .hero {
+            padding: 4rem 0 3rem;
+            text-align: center;
         }
-        .youtube-badge {
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: #0a2540;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: var(--blanco-roto);
-            padding: 8px 18px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--rojo-suave);
-            margin-top: 12px;
-            margin-right: 8px;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        .youtube-badge:hover {
-            background: var(--gris-claro);
-        }
-        .info-badge {
-            display: inline-block;
-            background: rgba(62,95,138,0.1);
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin: 8px 8px 0 0;
-            color: var(--azul-medio);
-        }
-        .form-modern {
-            background: white;
+            background: #0a2540;
+            color: white;
+            padding: 0.8rem 2rem;
             border-radius: 48px;
-            padding: 44px 40px;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
-            border: 1px solid var(--gris-claro);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
         }
-        .input-group {
-            margin-bottom: 24px;
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #0a2540;
+            color: #0a2540;
         }
+
+        .btn-outline:hover {
+            background: #0a2540;
+            color: white;
+        }
+
+        .btn:hover {
+            background: #1f4a6e;
+            transform: translateY(-2px);
+        }
+
+        /* Sección productos (grid minimalista) */
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #0a2540;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem;
+            transition: all 0.25s;
+            border: 1px solid #edf2f7;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .product-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 12px 24px -12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+
+        .product-icon {
+            font-size: 2.5rem;
+            color: #2b7a4b;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .product-card p {
+            color: #4a5568;
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #0a2540;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        /* Ventajas minimalistas */
+        .advantages-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .advantage-item i {
+            font-size: 2rem;
+            color: #2b7a4b;
+            margin-bottom: 1rem;
+        }
+
+        .advantage-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .advantage-item p {
+            color: #5a6e8a;
+            font-size: 0.9rem;
+        }
+
+        /* Formulario reclamaciones minimalista */
+        .claim-card {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #f9fbfd;
+            border-radius: 32px;
+            padding: 2rem;
+            border: 1px solid #e9eef3;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #2d3a4b;
+        }
+
         input, select, textarea {
             width: 100%;
-            padding: 14px 20px;
-            border-radius: 60px;
-            border: 2px solid var(--gris-claro);
-            font-family: 'Inter', sans-serif;
-        }
-        textarea {
-            border-radius: 28px;
-        }
-        button {
-            background: var(--azul-medio);
-            border: none;
-            padding: 14px;
-            border-radius: 60px;
-            font-weight: 700;
-            color: white;
-            width: 100%;
-            cursor: pointer;
+            padding: 0.9rem 1rem;
+            border: 1px solid #dce3ec;
+            border-radius: 20px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            background: white;
             transition: 0.2s;
         }
-        button:hover {
-            background: var(--marron-principal);
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2b7a4b;
+            box-shadow: 0 0 0 3px rgba(43,122,75,0.1);
+        }
+
+        /* Pagos y footer */
+        .payments {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+            color: #4a5568;
         }
 
         footer {
-            background: var(--azul-oscuro);
-            color: white;
-            margin-top: 70px;
-            padding: 48px 20px 32px;
+            background: #fafcfd;
+            padding: 2rem 0;
             text-align: center;
-        }
-        .social-links a {
-            color: var(--dorado-claro);
-            font-size: 1.8rem;
-            margin: 0 12px;
-            transition: 0.2s;
-        }
-        .social-links a:hover {
-            color: white;
-            transform: translateY(-5px);
-            display: inline-block;
+            color: #5a6e8a;
+            font-size: 0.85rem;
+            border-top: 1px solid #eef2f6;
         }
 
-        @media (max-width: 780px) {
-            .hero-andor h1 { font-size: 2rem; }
-            .section-title { font-size: 2rem; }
-            .header-content { flex-direction: column; text-align: center; }
-            .logo-area { justify-content: center; }
-            .hero-logo-img { height: 100px; }
-            .logo-real { height: 60px; }
+        .footer-links a {
+            color: #2b7a4b;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+            }
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 0 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="container header-content">
-        <div class="logo-area">
-            <img src="https://i.ibb.co/ccdT6FyD/LOGO.png" alt="Logo ANDOR" class="logo-real" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2290%22%20height%3D%2290%22%20viewBox%3D%220%200%2090%2090%22%3E%3Crect%20width%3D%2290%22%20height%3D%2290%22%20fill%3D%22%238B5E3C%22%2F%3E%3Ctext%20x%3D%2245%22%20y%3D%2255%22%20text-anchor%3D%22middle%22%20fill%3D%22%23D4A44B%22%20font-size%3D%2224%22%3EANDOR%3C%2Ftext%3E%3C%2Fsvg%3E';">
-            <div>
-                <div class="logo-text">ANDOR</div>
-                <div class="logo-sub">teatre de titelles nadalencs</div>
-            </div>
+    <div class="container header-flex">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i> Global<span style="font-weight: 500;">Insurance</span>
         </div>
         <nav>
             <ul>
-                <li><a href="#inici" data-section="inici" class="nav-link active">Inici</a></li>
-                <li><a href="#companyia" data-section="companyia" class="nav-link">Companyia</a></li>
-                <li><a href="#contes" data-section="contes" class="nav-link">Contes Nadalencs</a></li>
-                <li><a href="#espectacles" data-section="espectacles" class="nav-link">Espectacles</a></li>
-                <li><a href="#contacte" data-section="contacte" class="nav-link">Contacte</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ventajas">Ventajas</a></li>
+                <li><a href="#reclamaciones">Reclamaciones</a></li>
+                <li><a href="#">Mi área</a></li>
+                <li><a href="#" class="lang-btn"><i class="fas fa-globe"></i> EN</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<section class="hero-andor">
+<main>
     <div class="container">
-        <!-- LOGO GRANDE EN LA PÁGINA DE INICIO -->
-        <div class="hero-logo">
-            <img src="https://i.ibb.co/ccdT6FyD/LOGO.png" alt="ANDOR - Teatre de Titelles Nadalencs" class="hero-logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22160%22%20height%3D%22160%22%20viewBox%3D%220%200%20160%20160%22%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20fill%3D%22%238B5E3C%22%2F%3E%3Ctext%20x%3D%2280%22%20y%3D%2295%22%20text-anchor%3D%22middle%22%20fill%3D%22%23D4A44B%22%20font-size%3D%2236%22%3EANDOR%3C%2Ftext%3E%3C%2Fsvg%3E';">
+        <!-- Hero moderno -->
+        <div class="hero">
+            <h1>Seguros digitales, <br>sin complicaciones</h1>
+            <p>Contrata, gestiona y protege lo que más quieres en minutos. Con la máxima seguridad y transparencia.</p>
+            <a href="#productos" class="btn"><i class="fas fa-arrow-right"></i> Cotizar ahora</a>
         </div>
-        <h1><span>Màgia i tradició</span> en cada fil</h1>
-        <p style="font-size: 1.2rem; max-width: 700px; margin: 20px auto 0;">Tres contes nadalencs, titelles artesanals i l'essència del Nadal.</p>
-        <a href="#" class="btn-primary" id="scrollContacte"><i class="fas fa-ticket-alt"></i> Reserva la teva funció</a>
+
+        <!-- Productos -->
+        <div id="productos" class="section">
+            <h2 class="section-title">Nuestros seguros</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Salud</h3>
+                    <p>Acceso a clínicas privadas, reembolsos y telemedicina.</p>
+                    <div class="price">35€/mes</div>
+                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-car"></i></div>
+                    <h3>Auto</h3>
+                    <p>Cobertura total, asistencia en carretera y defensa legal.</p>
+                    <div class="price">28€/mes</div>
+                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-home"></i></div>
+                    <h3>Hogar</h3>
+                    <p>Protección frente a daños, robos e inundaciones.</p>
+                    <div class="price">22€/mes</div>
+                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-passport"></i></div>
+                    <h3>Viajes</h3>
+                    <p>Asistencia médica internacional y cancelación.</p>
+                    <div class="price">45€/viaje</div>
+                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Dispositivos</h3>
+                    <p>Robo, rotura de pantalla y daños accidentales.</p>
+                    <div class="price">9€/mes</div>
+                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-building"></i></div>
+                    <h3>Empresas</h3>
+                    <p>Responsabilidad civil y ciberseguridad.</p>
+                    <div class="price">desde 59€/mes</div>
+                    <a href="#" class="btn btn-sm">Contratar <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ventajas (minimalista) -->
+        <div id="ventajas" class="section">
+            <h2 class="section-title">Diseñado para ti</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Simplicidad</h4>
+                    <p>Contrata en 3 pasos, sin papeleos</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-eye"></i>
+                    <h4>Transparencia</h4>
+                    <p>Todo lo que pagas, claro y sin letra pequeña</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-clock"></i>
+                    <h4>24/7</h4>
+                    <p>Gestiona tu seguro desde cualquier lugar</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-lock"></i>
+                    <h4>Seguridad extrema</h4>
+                    <p>Cifrado AES-256 y firma digital</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reclamaciones como fidelización -->
+        <div id="reclamaciones" class="section">
+            <h2 class="section-title">Reclamaciones rápidas y justas</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem auto; color: #4a5568;">
+                Tu confianza es lo más importante. Resolvemos cualquier incidencia en menos de 72 horas.
+            </p>
+            <div class="claim-card">
+                <form>
+                    <div class="form-group">
+                        <label><i class="fas fa-file-alt"></i> Número de póliza</label>
+                        <input type="text" placeholder="Ej: POL-123456789">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-tag"></i> Tipo de reclamación</label>
+                        <select>
+                            <option>Siniestro</option>
+                            <option>Facturación</option>
+                            <option>Cobertura denegada</option>
+                            <option>Asistencia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-pen"></i> Descripción</label>
+                        <textarea rows="3" placeholder="Cuéntanos qué ha pasado..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-paperclip"></i> Adjuntar documento</label>
+                        <input type="file" style="padding: 0.5rem 0;">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Enviar reclamación</button>
+                </form>
+            </div>
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color:#5a6e8a;">
+                <i class="fas fa-check-circle"></i> Recibirás un número de seguimiento en tu email
+            </p>
+        </div>
+
+        <!-- Métodos de pago + criptografía -->
+        <div class="section" style="border-bottom: none;">
+            <h2 class="section-title">Pagos seguros y modernos</h2>
+            <div class="payments">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-paypal"></i>
+                <i class="fas fa-university"></i>
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <span style="background: #edf2f7; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem;">
+                    <i class="fas fa-lock"></i> Cifrado SSL · Clave asimétrica RSA · Firma digital
+                </span>
+            </div>
+        </div>
     </div>
-</section>
-
-<div class="container">
-    <section id="inici" class="section active">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
-            <i class="fas fa-star" style="color: var(--dorado-claro); font-size: 2.5rem;"></i>
-            <h2 class="section-title"><i class="fas fa-mask"></i> Benvinguts a ANDOR</h2>
-            <p>Més de 500 funcions a Catalunya. Titelles de fil, valors nadalencs i espectacles que connecten amb els infants.</p>
-        </div>
-        <div class="cards-grid">
-            <div class="card-cuento"><div class="card-body"><i class="fas fa-dove" style="font-size: 2.5rem; color: var(--azul-medio);"></i><h3>Màgia escènica</h3><p>Titelles que cobren vida, llums càlides i moviments plens d'expressivitat.</p></div></div>
-            <div class="card-cuento"><div class="card-body"><i class="fas fa-hand-sparkles" style="font-size: 2.5rem; color: var(--dorado-claro);"></i><h3>Valors Nadalencs</h3><p>Generositat, amistat i empatia en cada història.</p></div></div>
-            <div class="card-cuento"><div class="card-body"><i class="fas fa-palette" style="font-size: 2.5rem; color: var(--marron-principal);"></i><h3>Titelles artesanals</h3><p>Construcció manual única, amb detalls que enamoren.</p></div></div>
-        </div>
-    </section>
-
-    <!-- COMPANYIA - DETALLADA -->
-    <section id="companyia" class="section">
-        <h2 class="section-title"><i class="fas fa-users"></i> La companyia ANDOR</h2>
-        <div class="cards-grid">
-            <div class="card-cuento">
-                <div class="card-body">
-                    <i class="fas fa-history" style="font-size: 2rem; color: var(--azul-medio); margin-bottom: 12px; display: block;"></i>
-                    <h3>La nostra història</h3>
-                    <p>ANDOR va néixer l'any 2015 al barri de Gràcia, Barcelona, de la mà d'un grup d'artistes titellaires amb una il·lusió compartida: recuperar la tradició dels titelles nadalencs i adaptar-la al públic actual. En aquests 10 anys hem creat més de 15 espectacles propis i hem actuat en teatres, escoles i centres culturals de tot Catalunya. Actualment som una companyia de referència en el teatre de titelles infantil, amb més de 500 funcions realitzades i un públic fidel que creix cada any.</p>
-                </div>
-            </div>
-            <div class="card-cuento">
-                <div class="card-body">
-                    <i class="fas fa-heart" style="font-size: 2rem; color: var(--rojo-suave); margin-bottom: 12px; display: block;"></i>
-                    <h3>La nostra filosofia</h3>
-                    <p>Creiem fermament que el teatre de titelles és una eina educativa i emocional molt poderosa. Per això, cada espectacle està dissenyat per transmetre valors positius com l'amistat, la generositat, l'empatia i la importància de la família. Treballem perquè cada funció no només entretingui, sinó que deixi una empremta en el cor dels infants.</p>
-                </div>
-            </div>
-            <div class="card-cuento">
-                <div class="card-body">
-                    <i class="fas fa-theater-masks" style="font-size: 2rem; color: var(--dorado-oscuro); margin-bottom: 12px; display: block;"></i>
-                    <h3>L'equip ANDOR</h3>
-                    <p>Som un equip multidisciplinari format per titellaires, constructors de marionetes, escenògrafs, músics i guionistes. Tots compartim la passió per l'art de les titelles i la voluntat d'arribar als més petits amb històries plenes de màgia. La formació continuada i el treball en equip ens permeten créixer i innovar en cada nova producció.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTES NADALENCS -->
-    <section id="contes" class="section">
-        <h2 class="section-title"><i class="fas fa-snowman"></i> Els nostres contes nadalencs</h2>
-        <div class="cards-grid">
-            <div class="card-cuento">
-                <img class="cuento-img" src="https://images-eu.ssl-images-amazon.com/images/I/91P3CQjxYwL._AC_UL750_SR750,750_.jpg" alt="Conte de Nadal" onerror="this.src='https://via.placeholder.com/400x260?text=Conte+de+Nadal'">
-                <div class="card-body">
-                    <h3>📖 Conte de Nadal · Charles Dickens</h3>
-                    <div class="sinopsis">
-                        <strong>📝 Resum:</strong> L'Ebenezer Scrooge és un home avar i solitari que odia el Nadal. La nit de Nadal, rep la visita de tres esperits: el Passat, el Present i el Futur. A través d'aquest viatge fantasmagòric, Scrooge descobreix les conseqüències de la seva crueltat i la felicitat que pot trobar si canvia el seu cor. Desperta el dia de Nadal convertit en un home generós i estimat per tothom.
-                    </div>
-                    <div class="valors">
-                        <i class="fas fa-heart"></i> Valors: Generositat · Empatia · Redempció · Esperit nadalenc
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=UMv2rBmqgGQ" target="_blank" class="youtube-badge"><i class="fab fa-youtube"></i> Audiolibre complet</a>
-                    <a href="https://www.youtube.com/watch?v=6C63PqW2bKY" target="_blank" class="youtube-badge"><i class="fab fa-youtube"></i> Resum animat</a>
-                </div>
-            </div>
-            <div class="card-cuento">
-                <img class="cuento-img" src="https://m.media-amazon.com/images/I/81-Jv9p+IsL._AC_UF1000,1000_QL80_.jpg" alt="Krampus" onerror="this.src='https://via.placeholder.com/400x260?text=Krampus'">
-                <div class="card-body">
-                    <h3>🌲 Krampus · Llegendes alpines</h3>
-                    <div class="sinopsis">
-                        <strong>📝 Resum:</strong> La nit del 5 de desembre, mentre tothom espera Sant Nicolau, una criatura banyuda anomenada Krampus recorre els carrers amb cadenes i campanes. No ve a premiar, sinó a recordar als infants que les males accions tenen conseqüències. Però Krampus no és només càstig: també ofereix una lliçó i una oportunitat per redimir-se abans de les festes.
-                    </div>
-                    <div class="valors">
-                        <i class="fas fa-heart"></i> Valors: Responsabilitat · Justícia · Segona oportunitat · Reflexió
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=Hf2A1yMqC_U" target="_blank" class="youtube-badge"><i class="fab fa-youtube"></i> Documental història</a>
-                    <a href="https://www.youtube.com/watch?v=3UquJ6G6vKc" target="_blank" class="youtube-badge"><i class="fab fa-youtube"></i> Curt animat</a>
-                </div>
-            </div>
-            <div class="card-cuento">
-                <img class="cuento-img" src="https://m.media-amazon.com/images/I/71XvSBVuxAL.jpg" alt="El Trencanous" onerror="this.src='https://via.placeholder.com/400x260?text=Trencanous'">
-                <div class="card-body">
-                    <h3>🎠 El Trencanous · E.T.A. Hoffmann</h3>
-                    <div class="sinopsis">
-                        <strong>📝 Resum:</strong> La nit de Nadal, la Clara rep un trencanous de fusta amb forma de soldat. Quan la casa dorm, el joguina cobra vida i la convida a lluitar contra l'exèrcit del Rei de les Rates. Junts viatgen al Regne de les Neus i al palau de la Fada Sucre, on descobriran que la valentia i la imaginació poden vèncer qualsevol obstacle.
-                    </div>
-                    <div class="valors">
-                        <i class="fas fa-heart"></i> Valors: Valentia · Amistat · Imaginació · Fidelitat
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=YWudwBXE_VQ" target="_blank" class="youtube-badge"><i class="fab fa-youtube"></i> Pel·lícula animada</a>
-                    <a href="https://www.youtube.com/watch?v=LpRpqA8nyC8" target="_blank" class="youtube-badge"><i class="fab fa-youtube"></i> Conte narrat</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ESPECTACLES - DETALLATS -->
-    <section id="espectacles" class="section">
-        <h2 class="section-title"><i class="fas fa-ticket"></i> Espectacles en cartell</h2>
-        <div class="cards-grid">
-            <div class="card-cuento">
-                <div class="card-body">
-                    <i class="fas fa-ghost" style="font-size: 2rem; color: var(--azul-medio);"></i>
-                    <h3>Conte de Nadal</h3>
-                    <p><strong>Durada:</strong> 55 minuts · <strong>Edat recomanada:</strong> 4-12 anys</p>
-                    <p>Titelles d'ombra i de fil. Tres fantasmes, un viatge en el temps i la transformació d'un cor gelat. Música original i efectes de llum que creen una atmosfera màgica. Un espectacle que convida a la reflexió i a valorar les petites coses.</p>
-                    <div class="info-badge"><i class="fas fa-mask"></i> Titelles d'ombra</div>
-                    <div class="info-badge"><i class="fas fa-music"></i> Música en directe</div>
-                </div>
-            </div>
-            <div class="card-cuento">
-                <div class="card-body">
-                    <i class="fas fa-bell" style="font-size: 2rem; color: var(--dorado-claro);"></i>
-                    <h3>Krampus</h3>
-                    <p><strong>Durada:</strong> 45 minuts · <strong>Edat recomanada:</strong> 5-12 anys</p>
-                    <p>Titella gegant de Krampus d'1,5 metres, efectes de so de cadenes i campanes, i una posada en escena que combina tradició i emoció. Interacció amb el públic i un final que deixa una lliçó inoblidable sobre la responsabilitat i la redempció.</p>
-                    <div class="info-badge"><i class="fas fa-dragon"></i> Titella gegant</div>
-                    <div class="info-badge"><i class="fas fa-users"></i> Participació del públic</div>
-                </div>
-            </div>
-            <div class="card-cuento">
-                <div class="card-body">
-                    <i class="fas fa-music" style="font-size: 2rem; color: var(--marron-principal);"></i>
-                    <h3>El Trencanous</h3>
-                    <p><strong>Durada:</strong> 50 minuts · <strong>Edat recomanada:</strong> 3-10 anys</p>
-                    <p>Ballet de titelles amb música de Txaikovski. Neu artificial, efectes de llum i titelles ballarins que semblen volar. Una història plena de valentia, amistat i màgia nadalenca, perfecta per als espectadors més petits.</p>
-                    <div class="info-badge"><i class="fas fa-feather-alt"></i> Neu artificial</div>
-                    <div class="info-badge"><i class="fas fa-ballet-shoes"></i> Titelles ballarins</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacte" class="section">
-        <h2 class="section-title"><i class="fas fa-envelope-open-text"></i> Contacta amb ANDOR</h2>
-        <div class="form-modern">
-            <div class="input-group"><label><i class="fas fa-user"></i> Nom complet *</label><input type="text" id="nom" placeholder="Laia Rovira"></div>
-            <div class="input-group"><label><i class="fas fa-envelope"></i> Correu electrònic *</label><input type="email" id="email" placeholder="info@escola.cat"></div>
-            <div class="input-group"><label><i class="fas fa-phone-alt"></i> Telèfon</label><input type="tel" id="telefon" placeholder="93 000 00 00"></div>
-            <div class="input-group"><label><i class="fas fa-calendar"></i> Tipus esdeveniment *</label><select id="tipusEvent"><option>Escola / Col·legi</option><option>Teatre municipal</option><option>Festa privada / Casal</option><option>Centre cívic</option></select></div>
-            <div class="input-group"><label><i class="fas fa-mask"></i> Espectacle d'interès</label><select id="espectaclePref"><option>Conte de Nadal</option><option>Krampus</option><option>El Trencanous</option><option>Qualsevol / Aconsella'ns</option></select></div>
-            <div class="input-group"><label><i class="fas fa-comment"></i> Missatge *</label><textarea rows="4" id="missatge" placeholder="Explica'ns la teva idea, dates, nombre d'infants, pressupost orientatiu..."></textarea></div>
-            <button id="enviarForm"><i class="fas fa-paper-plane"></i> Enviar sol·licitud</button>
-        </div>
-    </section>
-</div>
+</main>
 
 <footer>
     <div class="container">
-        <div style="font-size: 1.8rem; font-weight: 700; color: var(--dorado-claro);">ANDOR</div>
-        <p>Màgia i tradició en cada fil · Teatre de titelles nadalencs</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+        <p><i class="far fa-copyright"></i> 2025 Global Insurance – comerç electrònic internacional</p>
+        <div class="footer-links" style="margin: 0.8rem 0;">
+            <a href="#">Política de privacidad</a> • 
+            <a href="#">RGPD</a> • 
+            <a href="#">Certificados digitales</a>
         </div>
-        <p style="margin-top: 28px; font-size: 0.8rem;">© 2025 ANDOR · Barcelona · Tots els drets reservats</p>
+        <p><i class="fas fa-globe"></i> Available in English · Español · Français · Deutsch</p>
     </div>
 </footer>
 
-<script>
-    const sections = ['inici', 'companyia', 'contes', 'espectacles', 'contacte'];
-    const navLinks = document.querySelectorAll('.nav-link');
-    function showSection(sectionId) {
-        sections.forEach(id => { const sec = document.getElementById(id); if(sec) sec.classList.remove('active'); });
-        const activeSec = document.getElementById(sectionId);
-        if(activeSec) activeSec.classList.add('active');
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if(link.getAttribute('data-section') === sectionId) link.classList.add('active');
-        });
-    }
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = link.getAttribute('data-section');
-            if(target) { showSection(target); window.scrollTo({ top: 280, behavior: 'smooth' }); }
-        });
-    });
-    document.getElementById('scrollContacte')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        showSection('contacte');
-        window.scrollTo({ top: 500, behavior: 'smooth' });
-    });
-    document.getElementById('enviarForm')?.addEventListener('click', () => {
-        const nom = document.getElementById('nom').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const tipus = document.getElementById('tipusEvent').value;
-        const msg = document.getElementById('missatge').value.trim();
-        if(!nom || !email || !tipus || !msg) { alert("📝 Si us plau, omple els camps obligatoris."); return; }
-        if(!email.includes('@')) { alert("📧 Introdueix un correu electrònic vàlid."); return; }
-        alert(`✨ Gràcies ${nom}! La teva sol·licitud per a l'espectacle "${document.getElementById('espectaclePref').value}" ha estat rebuda. Et contactarem en 24-48 hores al correu ${email}.`);
-        document.getElementById('nom').value = ''; 
-        document.getElementById('email').value = ''; 
-        document.getElementById('telefon').value = ''; 
-        document.getElementById('tipusEvent').selectedIndex = 0;
-        document.getElementById('espectaclePref').selectedIndex = 0;
-        document.getElementById('missatge').value = '';
-    });
-    showSection('inici');
-</script>
 </body>
 </html>
-
 
